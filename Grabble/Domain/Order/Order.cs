@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Grabble.Domain.Order
+namespace Grabble.Data.Domain.Order
 {
     public class Order
     {
@@ -36,10 +36,32 @@ namespace Grabble.Domain.Order
         /// Value should be a unique id
         /// </value>
         public List<object> Items { get; set; }
-
         #endregion
 
         #region Methods
+        public void Delete()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Get()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Patch()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Put()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+
+
 
         #endregion
     }

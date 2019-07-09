@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble", "Grabble\Grabble.csproj", "{41C2DE00-FF0B-4CAA-B645-CFD72B183230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Data", "Grabble\Grabble.Data.csproj", "{41C2DE00-FF0B-4CAA-B645-CFD72B183230}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.UnitTest", "XUnitTestGrabble\Grabble.UnitTest.csproj", "{3970EBC4-E1D4-4187-A2BE-488902F8A853}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Services", "GrabbleServices\Grabble.Services.csproj", "{0BE485DF-2C0C-416C-9B9B-9F310D246D63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.API", "GrabbleAPI\Grabble.API.csproj", "{380B606E-D20D-468E-AF28-070ED14F5036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.ProductAPI", "GrabbleProductAPI\Grabble.ProductAPI.csproj", "{43942A9A-93E2-4AB0-A57A-CF4237B96A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "GrabbleRepository\Grabble.Repository.csproj", "{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{41C2DE00-FF0B-4CAA-B645-CFD72B183230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C2DE00-FF0B-4CAA-B645-CFD72B183230}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C2DE00-FF0B-4CAA-B645-CFD72B183230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3970EBC4-E1D4-4187-A2BE-488902F8A853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3970EBC4-E1D4-4187-A2BE-488902F8A853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3970EBC4-E1D4-4187-A2BE-488902F8A853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3970EBC4-E1D4-4187-A2BE-488902F8A853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE485DF-2C0C-416C-9B9B-9F310D246D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE485DF-2C0C-416C-9B9B-9F310D246D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE485DF-2C0C-416C-9B9B-9F310D246D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE485DF-2C0C-416C-9B9B-9F310D246D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{380B606E-D20D-468E-AF28-070ED14F5036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380B606E-D20D-468E-AF28-070ED14F5036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380B606E-D20D-468E-AF28-070ED14F5036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380B606E-D20D-468E-AF28-070ED14F5036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43942A9A-93E2-4AB0-A57A-CF4237B96A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43942A9A-93E2-4AB0-A57A-CF4237B96A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43942A9A-93E2-4AB0-A57A-CF4237B96A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43942A9A-93E2-4AB0-A57A-CF4237B96A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

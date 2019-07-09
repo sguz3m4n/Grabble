@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Grabble.Domain.Item
+namespace Grabble.Data.Domain.Product
 {
-    public class Item
+    public class Product
     {
         #region Constructor
 
-        public Item()
+        public void Item()
         {
 
         }
@@ -29,7 +29,7 @@ namespace Grabble.Domain.Item
         [Key]
         [JsonRequired]
         [JsonProperty("Sku")]
-        public String Sku { get; set; }
+        public string Sku { get; set; }
 
         /// <summary>
         /// Name of manufactured item displayed on item packaging
@@ -39,7 +39,7 @@ namespace Grabble.Domain.Item
         /// </value>
         [JsonRequired]
         [JsonProperty("ItemName")]
-        public String ItemName { get; set; }
+        public string ItemName { get; set; }
 
         /// <summary>
         /// Description of manufactured item displayed on item packaging
@@ -48,7 +48,7 @@ namespace Grabble.Domain.Item
         /// Value should be a string 
         /// </value>
         [JsonProperty("ItemDescription")]
-        public String ItemDescription { get; set; }
+        public string ItemDescription { get; set; }
 
         /// <summary>
         /// Collection of physical item properties such as weight, height width etc 
@@ -68,10 +68,30 @@ namespace Grabble.Domain.Item
         [JsonRequired]
         [JsonProperty("Cost")]
         public decimal Cost { get; set; }
-
         #endregion
 
         #region Methods
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Patch()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Put()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         #endregion
     }
