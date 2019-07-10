@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Grabble.Data.Domain.Order
 {
+    [Table("Order")]
     public class Order
     {
         #region Constructor
@@ -26,8 +29,8 @@ namespace Grabble.Data.Domain.Order
         /// </value>
         [Key]
         [JsonRequired]
-        [JsonProperty("Ordernumber")]
-        public object Ordernumber { get; set; }
+        [JsonProperty("OrderNumber")]
+        public Guid OrderNumber { get; set; }
 
         /// <summary>
         /// Collection of Items placed on an order
@@ -35,34 +38,42 @@ namespace Grabble.Data.Domain.Order
         /// <value>
         /// Value should be a unique id
         /// </value>
-        public List<object> Items { get; set; }
+        [NotMapped]
+        [JsonRequired]
+        [JsonProperty("Products")]
+        public ICollection<object> Products { get; set; }
+
+        [JsonRequired]
+        [JsonProperty("BillingDetails")]
+        public ICollection<object> BillingDetails { get; set; }
+
+        [JsonRequired]
+        [JsonProperty("ShippingDetails")]
+        public ICollection<object> ShippingDetails { get; set; }
+
+        [JsonRequired]
+        [JsonProperty("OrderDate")]
+        public DateTime OrderDate { get; set; }
+
+        [JsonRequired]
+        [JsonProperty("DeliveryDate")]
+        public DateTime DeliveryDate { get; set; }
+
+        [JsonProperty("Instructions")]
+        public String Instructions { get; set; }
+
+        [JsonProperty("PaymentType")]
+        public String PaymentType { get; set; }
+
+        [JsonProperty("CreateDate")]
+        public DateTime CreateDate { get; set; }
+
+        [JsonProperty("ModifyDate")]
+        public DateTime ModifyDate { get; set; }
+
+        [JsonProperty("IPAddress")]
+        public String IPAddress { get; set; }
         #endregion
 
-        #region Methods
-        public void Delete()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Get()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Patch()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Put()
-        {
-            throw new System.NotImplementedException();
-        }
-
-
-
-
-
-        #endregion
     }
 }

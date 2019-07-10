@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GrabbleRepository\Grabble.Repository.csproj" />
     <ProjectReference Include="..\Grabble\Grabble.Data.csproj" />
   </ItemGroup>
 

@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Product
+namespace Grabble.Data.Domain.Detail
 {
+    [Table("Product")]
     public class Product
     {
         #region Constructor
@@ -32,23 +33,50 @@ namespace Grabble.Data.Domain.Product
         public string Sku { get; set; }
 
         /// <summary>
-        /// Name of manufactured item displayed on item packaging
+        /// Name of manufactured product displayed on product packaging
         /// </summary>
         /// <value>
         /// Value should be a string 
         /// </value>
         [JsonRequired]
-        [JsonProperty("ItemName")]
-        public string ItemName { get; set; }
+        [JsonProperty("ProductName")]
+        public string ProductName { get; set; }
 
         /// <summary>
-        /// Description of manufactured item displayed on item packaging
+        /// Description of manufactured product displayed on product packaging
         /// </summary>
         /// <value>
         /// Value should be a string 
         /// </value>
-        [JsonProperty("ItemDescription")]
-        public string ItemDescription { get; set; }
+        [JsonProperty("ProductDescription")]
+        public string ProductDescription { get; set; }
+
+        /// <summary>
+        /// Weight of physical product etc 
+        /// </summary>
+        /// <value>
+        /// Value should be a decimal 
+        /// </value>
+        [JsonProperty("Weight")]
+        public decimal Weight { get; set; }
+
+        /// <summary>
+        /// Height of physical product etc 
+        /// </summary>
+        /// <value>
+        /// Value should be a decimal 
+        /// </value>
+        [JsonProperty("Height")]
+        public decimal Height { get; set; }
+
+        /// <summary>
+        /// Volume of physical product etc 
+        /// </summary>
+        /// <value>
+        /// Value should be a decimal 
+        /// </value>
+        [JsonProperty("Volume")]
+        public decimal Volume { get; set; }
 
         /// <summary>
         /// Collection of physical item properties such as weight, height width etc 
@@ -56,11 +84,12 @@ namespace Grabble.Data.Domain.Product
         /// <value>
         /// Value should be a string 
         /// </value>
-        [JsonProperty("Dimensions")]
-        public ICollection<object> Dimensions { get; set; }
+        [JsonProperty("Details")]
+        [NotMapped]
+        public ICollection<object> Details { get; set; }
 
         /// <summary>
-        /// Unit cost of item 
+        /// Unit cost of product 
         /// </summary>
         /// <value>
         /// Value should be a string 
@@ -70,29 +99,5 @@ namespace Grabble.Data.Domain.Product
         public decimal Cost { get; set; }
         #endregion
 
-        #region Methods
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Patch()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Put()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        #endregion
     }
 }

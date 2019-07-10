@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29025.244
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Data", "Grabble\Grabble.Data.csproj", "{41C2DE00-FF0B-4CAA-B645-CFD72B183230}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.ProductAPI", "GrabbleProductAPI\Grabble.ProductAPI.csproj", "{43942A9A-93E2-4AB0-A57A-CF4237B96A28}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "GrabbleRepository\Grabble.Repository.csproj", "{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabbleOrderAPI", "GrabbleOrderAPI\GrabbleOrderAPI.csproj", "{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
