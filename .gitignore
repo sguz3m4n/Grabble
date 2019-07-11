@@ -264,4 +264,12 @@ __pycache__/
 /GrabbleOrderAPI/appsettings.json
 /GrabbleOrderAPI/appsettings.Development.json
 /GrabbleRepository/Properties/Resources.resx
+/GrabbleRepository/Properties/Resources.Designer.cs
 /GrabbleOrderAPI/Properties/launchSettings.json
+/GrabbleRepository/Migrations
+/GrabbleRepository/appsettings.Development.json
+/GrabbleRepository/appsettings.json
+/Grabble/Properties/Resources.resx
+/Grabble/Properties/Resources.Designer.cs
+/Grabble/Properties/Resources.resx
+
