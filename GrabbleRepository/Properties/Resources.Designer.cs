@@ -61,7 +61,7 @@ namespace Grabble.Repository.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ewe.
+        ///   Looks up a localized string similar to Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Order;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
         /// </summary>
         internal static string connLocal {
             get {
@@ -70,11 +70,11 @@ namespace Grabble.Repository.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to wewe.
+        ///   Looks up a localized string similar to Data Source=(localdb)\ProjectsV13;Initial Catalog=Order;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
         /// </summary>
-        internal static string connRemote {
+        internal static string connLocalProjectsV13 {
             get {
-                return ResourceManager.GetString("connRemote", resourceCulture);
+                return ResourceManager.GetString("connLocalProjectsV13", resourceCulture);
             }
         }
     }

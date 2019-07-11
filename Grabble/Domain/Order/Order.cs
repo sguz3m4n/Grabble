@@ -43,10 +43,12 @@ namespace Grabble.Data.Domain.Order
         [JsonProperty("Products")]
         public ICollection<object> Products { get; set; }
 
+        [NotMapped]
         [JsonRequired]
         [JsonProperty("BillingDetails")]
         public ICollection<object> BillingDetails { get; set; }
 
+        [NotMapped]
         [JsonRequired]
         [JsonProperty("ShippingDetails")]
         public ICollection<object> ShippingDetails { get; set; }

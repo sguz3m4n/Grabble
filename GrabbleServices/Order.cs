@@ -1,4 +1,5 @@
-﻿using Grabble.Repository.REST;
+﻿using Grabble.Repository.Repo;
+using Grabble.Repository.REST;
 using System;
 
 namespace Grabble.Services
@@ -11,5 +12,11 @@ namespace Grabble.Services
             var test = new GrabbleREST();
             RestTest = test.RestTest();
         }
+
+        #region Properties
+        public GrabbleRepo GrabbleRepo { get; set; }
+        public GrabbleREST GrabbleREST { get; set; }
+        #endregion
+
     }
 }

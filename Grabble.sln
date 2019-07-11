@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.ProductAPI", "Grabb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "GrabbleRepository\Grabble.Repository.csproj", "{66D6DA84-C14E-4A06-B585-09A4E6EF9B48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabbleOrderAPI", "GrabbleOrderAPI\GrabbleOrderAPI.csproj", "{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.OrderAPI", "GrabbleOrderAPI\Grabble.OrderAPI.csproj", "{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.ConsoleApp", "Grabble.ConsoleApp\Grabble.ConsoleApp.csproj", "{464161CE-CE02-4981-A4D6-6CF819CB61EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464161CE-CE02-4981-A4D6-6CF819CB61EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464161CE-CE02-4981-A4D6-6CF819CB61EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464161CE-CE02-4981-A4D6-6CF819CB61EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464161CE-CE02-4981-A4D6-6CF819CB61EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
