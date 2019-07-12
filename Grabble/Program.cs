@@ -6,7 +6,7 @@ namespace Grabble.Data
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+        
         }
 
     }

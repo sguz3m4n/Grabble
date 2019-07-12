@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Grabble.Data.Domain.Order
 {
     [Table("Order")]
-    public class Order
+    public class Order:BaseEntity
     {
         #region Constructor
 
@@ -41,17 +41,17 @@ namespace Grabble.Data.Domain.Order
         [NotMapped]
         [JsonRequired]
         [JsonProperty("Products")]
-        public ICollection<object> Products { get; set; }
+        public virtual ICollection<object> Products { get; set; }
 
         [NotMapped]
         [JsonRequired]
         [JsonProperty("BillingDetails")]
-        public ICollection<object> BillingDetails { get; set; }
+        public virtual ICollection<object> BillingDetails { get; set; }
 
         [NotMapped]
         [JsonRequired]
         [JsonProperty("ShippingDetails")]
-        public ICollection<object> ShippingDetails { get; set; }
+        public virtual ICollection<object> ShippingDetails { get; set; }
 
         [JsonRequired]
         [JsonProperty("OrderDate")]
@@ -67,14 +67,7 @@ namespace Grabble.Data.Domain.Order
         [JsonProperty("PaymentType")]
         public String PaymentType { get; set; }
 
-        [JsonProperty("CreateDate")]
-        public DateTime CreateDate { get; set; }
 
-        [JsonProperty("ModifyDate")]
-        public DateTime ModifyDate { get; set; }
-
-        [JsonProperty("IPAddress")]
-        public String IPAddress { get; set; }
         #endregion
 
     }
