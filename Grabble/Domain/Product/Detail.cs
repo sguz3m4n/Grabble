@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Grabble.Data.Domain.Detail
 {
-    public class Detail
+    public class Detail:BaseDetails
     {
         #region Constructor
         public Detail()

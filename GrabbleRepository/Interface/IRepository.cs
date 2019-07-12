@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Grabble.Data.Domain;
+using System;
 using System.Collections.Generic;
 
 namespace Grabble.Repository.Interface
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll();
         List<String> GetListAll();

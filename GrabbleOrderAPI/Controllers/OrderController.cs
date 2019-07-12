@@ -1,6 +1,4 @@
-﻿using Grabble.Repository.Repo;
-using Grabble.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace Grabble.OrderAPI.Controllers
@@ -13,9 +11,9 @@ namespace Grabble.OrderAPI.Controllers
         [HttpGet]
         public ActionResult<String> TestRest()
         {
-            var result = new OrderService().RestTest;
+            //var result = new OrderService().RestTest;
 
-            return Content(result);
+            return Content(null);
         }
 
 

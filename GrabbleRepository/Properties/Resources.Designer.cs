@@ -63,9 +63,9 @@ namespace Grabble.Repository.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Order;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
         /// </summary>
-        internal static string connLocal {
+        internal static string connLocalMSSQLLocalDB {
             get {
-                return ResourceManager.GetString("connLocal", resourceCulture);
+                return ResourceManager.GetString("connLocalMSSQLLocalDB", resourceCulture);
             }
         }
         
