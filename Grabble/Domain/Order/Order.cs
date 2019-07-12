@@ -27,31 +27,9 @@ namespace Grabble.Data.Domain.Order
         /// <value>
         /// Value should be a unique id
         /// </value>
-        [Key]
         [JsonRequired]
         [JsonProperty("OrderNumber")]
         public Guid OrderNumber { get; set; }
-
-        /// <summary>
-        /// Collection of Items placed on an order
-        /// </summary>
-        /// <value>
-        /// Value should be a unique id
-        /// </value>
-        [NotMapped]
-        [JsonRequired]
-        [JsonProperty("Products")]
-        public virtual ICollection<object> Products { get; set; }
-
-        [NotMapped]
-        [JsonRequired]
-        [JsonProperty("BillingDetails")]
-        public virtual ICollection<object> BillingDetails { get; set; }
-
-        [NotMapped]
-        [JsonRequired]
-        [JsonProperty("ShippingDetails")]
-        public virtual ICollection<object> ShippingDetails { get; set; }
 
         [JsonRequired]
         [JsonProperty("OrderDate")]
@@ -67,6 +45,51 @@ namespace Grabble.Data.Domain.Order
         [JsonProperty("PaymentType")]
         public String PaymentType { get; set; }
 
+
+        /// <summary>
+        /// Gets or sets the customer identifier
+        /// </summary>
+        [JsonProperty("PaymentType")]
+        public int CustomerId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the billing address identifier
+        /// </summary>
+        [JsonProperty("PaymentType")]
+        public int BillingAddressId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shipping address identifier
+        /// </summary>
+        [JsonProperty("PaymentType")]
+        public int? ShippingAddressId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pickup address identifier
+        /// </summary>
+        [JsonProperty("PaymentType")]
+        public int? PickupAddressId { get; set; }
+
+        [NotMapped]
+        [JsonRequired]
+        [JsonProperty("BillingDetails")]
+        public virtual ICollection<object> BillingDetails { get; set; }
+
+        [NotMapped]
+        [JsonRequired]
+        [JsonProperty("ShippingDetails")]
+        public virtual ICollection<object> ShippingDetails { get; set; }
+
+        /// <summary>
+        /// Collection of Items placed on an order
+        /// </summary>
+        /// <value>
+        /// Value should be a unique id
+        /// </value>
+        [NotMapped]
+        [JsonRequired]
+        [JsonProperty("Products")]
+        public virtual ICollection<object> Products { get; set; }
 
         #endregion
 

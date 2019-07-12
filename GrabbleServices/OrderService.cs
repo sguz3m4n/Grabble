@@ -9,11 +9,18 @@ namespace Grabble.Services
     public class OrderService : IOrderService
     {
         private IRepository<Order> orderRepository;
+
         public OrderService(IRepository<Order> orderRepository)
         {
             this.orderRepository = orderRepository;
         }
+
         public void DeleteOrder(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Order> GetListOrders()
         {
             throw new NotImplementedException();
         }
@@ -30,12 +37,12 @@ namespace Grabble.Services
 
         public void InsertOrder(Order order)
         {
-            throw new NotImplementedException();
+            orderRepository.Insert(order);
         }
 
         public void UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            orderRepository.Update(order);
         }
     }
 }
