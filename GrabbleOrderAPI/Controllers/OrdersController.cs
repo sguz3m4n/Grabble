@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace Grabble.OrderAPI.Controllers
 {
     [ApiController]
-    public class OrderController : ControllerBase
+    public class OrdersController : ControllerBase
     {
+        private static string _version = "v1";
         public IRepository<Order> _order { get; set; }
         public OrderService _orderservice { get; set; }
         //public OrderController(IRepository<Order> order)
@@ -17,12 +18,12 @@ namespace Grabble.OrderAPI.Controllers
         //    _order = order;
         //}
 
-        [Route("api/order/[action]")]
-        [ActionName("test")]
+        [Route("api/v1/orders")]
         [HttpGet]
         public ActionResult<String> TestRest()
         {
-            return Content("order api working..");
+            /* Returns a list of Orders*/
+            return Content("Orders API versoin: " + OrdersController._version);
         }
 
         //// POST: api/company/register

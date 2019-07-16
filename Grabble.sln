@@ -17,7 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "Grabb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.OrderAPI", "GrabbleOrderAPI\Grabble.OrderAPI.csproj", "{10DD623B-DB1C-4B20-BDFD-9FEB7A48B0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.ConsoleApp", "Grabble.ConsoleApp\Grabble.ConsoleApp.csproj", "{464161CE-CE02-4981-A4D6-6CF819CB61EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.ConsoleApp", "Grabble.ConsoleApp\Grabble.ConsoleApp.csproj", "{464161CE-CE02-4981-A4D6-6CF819CB61EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{734C7D0E-8738-4B9E-9A8C-812EC6D9D336}"
+	ProjectSection(SolutionItems) = preProject
+		resources\GrabbleOrder.uml = resources\GrabbleOrder.uml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
