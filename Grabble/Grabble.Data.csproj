@@ -6,6 +6,7 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
+    <UserSecretsId>d29d8944-b56c-49a5-a711-329dd38d5030</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

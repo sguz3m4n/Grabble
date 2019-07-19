@@ -20,11 +20,36 @@ namespace Grabble.OrderAPI.Controllers
 
         [Route("api/v1/orders")]
         [HttpGet]
-        public ActionResult<String> TestRest()
+        public ActionResult<String> ListOrders()
         {
             /* Returns a list of Orders*/
             return Content("Orders API versoin: " + OrdersController._version);
         }
+
+        [Route("api/v1/orders")]
+        [HttpPost]
+        public ActionResult<String> CreateOrder()
+        {
+            /* creates a new Order*/
+            return Content("Orders API versoin: " + OrdersController._version);
+        }
+
+        [Route("api/v1/orders/{id}")]
+        [HttpPut]
+        public ActionResult<String> UpdateOrder()
+        {
+            /* update an Order*/
+            return Content("Orders API versoin: " + OrdersController._version);
+        }
+
+        [Route("api/v1/orders/{id}")]
+        [HttpDelete]
+        public ActionResult<String> DeleteOrder()
+        {
+            /* deletes an Order*/
+            return Content("Orders API versoin: " + OrdersController._version);
+        }
+
 
         //// POST: api/company/register
         //[Route("api/order/[action]")]
