@@ -77,5 +77,14 @@ namespace Grabble.Repository.Properties {
                 return ResourceManager.GetString("connLocalProjectsV13", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to grabble.database.windows.net;Initial Catalog=grabbleorder;User ID=gr4bbl3;Password=T34mK1tj12019;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
+        /// </summary>
+        internal static string connStage {
+            get {
+                return ResourceManager.GetString("connStage", resourceCulture);
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace Grabble.Data.Domain
         #region Properties
 
         [Key]
+        [JsonIgnore]
         public Int64 Id { get; set; }
 
         [JsonProperty("CreateDate")]

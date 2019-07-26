@@ -29,11 +29,11 @@ namespace GrabbleOrderAPI
                 options.UseSqlServer(
                     Configuration.GetConnectionString("LocalConn")));
 #else
-      //add service for the payohtee app db context
+            //add service for the payohtee app db context
             //pass connection string from the appsettings.json file
-            services.AddDbContext<PayohteeDbContext>(options =>
+            services.AddDbContext<OrderDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("StageConn")));
+                    Configuration.GetConnectionString("LocalConn")));
 #endif
         }
 
@@ -52,6 +52,6 @@ namespace GrabbleOrderAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
-        }
+                }
     }
 }
