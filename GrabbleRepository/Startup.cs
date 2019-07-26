@@ -19,12 +19,13 @@ namespace GrabbleProductAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             //add service for the payohtee app db context
             //pass connection string from the appsettings.json file
+
             services.AddDbContext<OrderDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("LocalConn")));
+                    Configuration.GetConnectionString("StageConn")));
+      
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

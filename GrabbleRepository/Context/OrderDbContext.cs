@@ -10,7 +10,7 @@ namespace Grabble.Repository.Context
 
         public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options)
         {
-           
+
         }
 
         #endregion
@@ -28,18 +28,17 @@ namespace Grabble.Repository.Context
             if (!optionsBuilder.IsConfigured)
             {
                 //use this string to target local environment
-                //this is not working for asynch calls 
                 var connlocal = Resources.connLocalMSSQLLocalDB;
                 //use this string to target remote environment
-                //var connremote = Resources.connremote;
+                var connstage = Resources.connStage;
 #if DEBUG
-                optionsBuilder.UseSqlServer(connlocal,
+ optionsBuilder.UseSqlServer(connlocal,
                                provideroptions => provideroptions.CommandTimeout(60))
                            .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 #else
-                optionsBuilder.UseSqlServer(connremote,
-                               provideroptions => provideroptions.CommandTimeout(60))
-                           .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                optionsBuilder.UseSqlServer(connstage,
+                                           provideroptions => provideroptions.CommandTimeout(60))
+                                       .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 #endif
 
 

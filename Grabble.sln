@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{734C7D0E-8738-4B9E-9A8C-812EC6D9D336}"
 	ProjectSection(SolutionItems) = preProject
 		resources\GrabbleOrder.uml = resources\GrabbleOrder.uml
+		OrderJsonTemplate.txt = OrderJsonTemplate.txt
 	EndProjectSection
 EndProject
 Global

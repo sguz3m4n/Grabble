@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,6 +9,8 @@ namespace Grabble.Data.Domain.Detail
     [Table("Product")]
     public class Product
     {
+        //private ICollection<GiftCard> _associatedGiftCards;
+
         #region Constructor
 
         public void Item()
@@ -18,85 +21,122 @@ namespace Grabble.Data.Domain.Detail
         #endregion
 
         #region Properties
+   
 
         /// <summary>
-        /// A stock keeping unit (SKU) is an alphanumeric code that identifies a product and helps you track
-        /// inventory for your retail business. You can create SKU numbers manually or using inventory
-        /// management or point-of-sale (POS) software
+        /// Gets or sets the order item identifier
         /// </summary>
-        /// <value>
-        /// Value should be a unique id
-        /// </value>
-        [Key]
-        [JsonRequired]
-        [JsonProperty("Sku")]
-        public string Sku { get; set; }
+        public Guid OrderItemGuid { get; set; }
 
         /// <summary>
-        /// Name of manufactured product displayed on product packaging
+        /// Gets or sets the order identifier
         /// </summary>
-        /// <value>
-        /// Value should be a string 
-        /// </value>
-        [JsonRequired]
-        [JsonProperty("ProductName")]
-        public string ProductName { get; set; }
+        public int OrderId { get; set; }
 
         /// <summary>
-        /// Description of manufactured product displayed on product packaging
+        /// Gets or sets the product identifier
         /// </summary>
-        /// <value>
-        /// Value should be a string 
-        /// </value>
-        [JsonProperty("ProductDescription")]
-        public string ProductDescription { get; set; }
+        public int ProductId { get; set; }
 
         /// <summary>
-        /// Weight of physical product etc 
+        /// Gets or sets the quantity
         /// </summary>
-        /// <value>
-        /// Value should be a decimal 
-        /// </value>
-        [JsonProperty("Weight")]
-        public decimal Weight { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
-        /// Height of physical product etc 
+        /// Gets or sets the unit price in primary store currency (include tax)
         /// </summary>
-        /// <value>
-        /// Value should be a decimal 
-        /// </value>
-        [JsonProperty("Height")]
-        public decimal Height { get; set; }
+        public decimal UnitPriceInclTax { get; set; }
 
         /// <summary>
-        /// Volume of physical product etc 
+        /// Gets or sets the unit price in primary store currency (exclude tax)
         /// </summary>
-        /// <value>
-        /// Value should be a decimal 
-        /// </value>
-        [JsonProperty("Volume")]
-        public decimal Volume { get; set; }
+        public decimal UnitPriceExclTax { get; set; }
 
         /// <summary>
-        /// Collection of physical item properties such as weight, height width etc 
+        /// Gets or sets the price in primary store currency (include tax)
         /// </summary>
-        /// <value>
-        /// Value should be a string 
-        /// </value>
-        [JsonProperty("Details")]
-        [NotMapped]
-        public ICollection<object> Details { get; set; }
+        public decimal PriceInclTax { get; set; }
 
         /// <summary>
-        /// Unit cost of product 
+        /// Gets or sets the price in primary store currency (exclude tax)
         /// </summary>
-        /// <value>
-        /// Value should be a string 
-        /// </value>
-        [JsonRequired]
-        [JsonProperty("Cost")]
-        public decimal Cost { get; set; }
+        public decimal PriceExclTax { get; set; }
+
+        /// <summary>
+        /// Gets or sets the discount amount (include tax)
+        /// </summary>
+        public decimal DiscountAmountInclTax { get; set; }
+
+        /// <summary>
+        /// Gets or sets the discount amount (exclude tax)
+        /// </summary>
+        public decimal DiscountAmountExclTax { get; set; }
+
+        /// <summary>
+        /// Gets or sets the original cost of this order item (when an order was placed), qty 1
+        /// </summary>
+        public decimal OriginalProductCost { get; set; }
+
+        /// <summary>
+        /// Gets or sets the attribute description
+        /// </summary>
+        public string AttributeDescription { get; set; }
+
+        /// <summary>
+        /// Gets or sets the product attributes in XML format
+        /// </summary>
+        public string AttributesXml { get; set; }
+
+        /// <summary>
+        /// Gets or sets the download count
+        /// </summary>
+        public int DownloadCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether download is activated
+        /// </summary>
+        public bool IsDownloadActivated { get; set; }
+
+        /// <summary>
+        /// Gets or sets a license download identifier (in case this is a downloadable product)
+        /// </summary>
+        public int? LicenseDownloadId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the total weight of one item
+        /// It's nullable for compatibility with the previous version of nopCommerce where was no such property
+        /// </summary>
+        public decimal? ItemWeight { get; set; }
+
+        ///// <summary>
+        ///// Gets or sets the rental product start date (null if it's not a rental product)
+        ///// </summary>
+        //public DateTime? RentalStartDateUtc { get; set; }
+
+        ///// <summary>
+        ///// Gets or sets the rental product end date (null if it's not a rental product)
+        ///// </summary>
+        //public DateTime? RentalEndDateUtc { get; set; }
+
+        ///// <summary>
+        ///// Gets the order
+        ///// </summary>
+        //public virtual Order Order { get; set; }
+
+        ///// <summary>
+        ///// Gets the product
+        ///// </summary>
+        //public virtual Product Product { get; set; }
+
+        ///// <summary>
+        ///// Gets or sets the associated gift card
+        ///// </summary>
+        //public virtual ICollection<GiftCard> AssociatedGiftCards
+        //{
+        //    get => _associatedGiftCards ?? (_associatedGiftCards = new List<GiftCard>());
+        //    protected set => _associatedGiftCards = value;
+        //}
         #endregion
 
     }

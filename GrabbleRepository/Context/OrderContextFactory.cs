@@ -12,7 +12,12 @@ namespace Grabble.Repository.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<OrderDbContext>();
             //use the resource connection string to switch database targets
-            optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);
+#if DEBUG
+optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);
+#else
+            optionsBuilder.UseSqlServer(Resources.connStage); optionsBuilder.UseSqlServer(Resources.connStage);
+#endif
+
 
             return new OrderDbContext(optionsBuilder.Options);
         }
