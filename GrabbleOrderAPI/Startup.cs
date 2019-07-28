@@ -1,4 +1,6 @@
-﻿using Grabble.Repository.Context;
+﻿using Grabble.Repository;
+using Grabble.Repository.Interface;
+using Grabble.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -21,20 +23,14 @@ namespace GrabbleOrderAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
 #if DEBUG
-
-            //add service for the payohtee app db context
-            //pass connection string from the resource file
-            services.AddDbContext<OrderDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("LocalConn")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connLocalMSSQLLocalDB")));
 #else
-            //add service for the payohtee app db context
-            //pass connection string from the appsettings.json file
-            services.AddDbContext<OrderDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("LocalConn")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connStage")));
 #endif
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +48,6 @@ namespace GrabbleOrderAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
-                }
+        }
     }
 }

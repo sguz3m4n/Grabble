@@ -1,18 +1,20 @@
 ﻿using Grabble.Data.Domain.Order;
 using Grabble.Repository.Context;
+using Grabble.Repository.Interface;
+using Grabble.Services;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
-using Grabble.Services;
 
 namespace Grabble.ConsoleApp
 {
-    class Program
+  public  class Program
     {
+
         static void Main(string[] args)
         {
-
             var ctxt = new OrderDbContext(options: new DbContextOptions<OrderDbContext>());
+            
             Order order = new Order
             {
                 OrderGuid = Guid.NewGuid(),
@@ -34,13 +36,14 @@ namespace Grabble.ConsoleApp
                 CardNumber = "23455555",
                 CardCvv2 = "254",
                 CardExpirationMonth = "Jan",
-                CardExpirationYear = "22"
+                CardExpirationYear = "22",
+                AuthorizationTransactionId="22",
+                CaptureTransactionId="34"
+
             };
             var json = JsonConvert.SerializeObject(order);
 
             order.ModifyBy = order.CreateBy = "test";
-
-            //var orderservice = new OrderService(null, ctxt);
 
             ////orderservice.Insert(order);
             //orderservice.Get(3);

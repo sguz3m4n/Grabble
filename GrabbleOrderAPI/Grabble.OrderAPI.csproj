@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <StartupObject>GrabbleOrderAPI.Program</StartupObject>
+    <UserSecretsId>dbda48e2-9303-408b-a8c7-165381d4a058</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,15 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GrabbleServices\Grabble.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="appsettings.Development.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="appsettings.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>
