@@ -1,16 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Grabble.Data.Domain.Order;
+using Grabble.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace Grabble.OrderAPI.Controllers
 {
 
     [ApiController]
-   [Route("api/[controller]")]
+    [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
+        private readonly IOrderService iorder;
+        private readonly OrderService orderservice;
 
-        // GET: api/v1/Order
-        [HttpGet]     
+        public OrderController( OrderService orderservice)
+        {
+            this.orderservice = orderservice;
+        }
+
+        // GET: api/Order
+        [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
@@ -25,8 +34,12 @@ namespace Grabble.OrderAPI.Controllers
 
         // POST: api/Order
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Order order)
         {
+            if (ModelState.IsValid)
+            {
+                orderservice.InsertOrder(order);
+            }
         }
 
         // PUT: api/Order/5

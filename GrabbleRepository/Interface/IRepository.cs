@@ -12,14 +12,17 @@ namespace Grabble.Repository.Interface
 
         #region Methods
 
-        Boolean Exists(int id);
-        IEnumerable<T> GetAll();
         List<String> GetListAll();
+        Boolean Exists(int id);
+
+
+        IEnumerable<T> GetAll();
         T Get(int id);
         void Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
         void Remove(T entity);
+        void SaveChanges();
 
         #endregion
 

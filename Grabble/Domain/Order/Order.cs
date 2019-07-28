@@ -1,14 +1,12 @@
 ﻿using Newtonsoft.Json;
-using Grabble.Data.Domain;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Grabble.Data.Domain.Order
 {
     [Table("Order")]
-    public class Order:BaseEntity
+    [JsonObject("Order")]
+    public class Order : BaseEntity
     {
         #region Constructor
 
@@ -29,31 +27,37 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the order identifier
         /// </summary>
+        [JsonRequired]
         public Guid OrderGuid { get; set; }
 
         /// <summary>
         /// Gets or sets the store identifier
         /// </summary>
+        [JsonRequired]
         public int StoreId { get; set; }
 
         /// <summary>
         /// Gets or sets the customer identifier
         /// </summary>
+        [JsonRequired]
         public int CustomerId { get; set; }
 
         /// <summary>
         /// Gets or sets the billing address identifier
         /// </summary>
+        [JsonRequired]
         public int BillingAddressId { get; set; }
 
         /// <summary>
         /// Gets or sets the shipping address identifier
         /// </summary>
+        [JsonRequired]
         public int? ShippingAddressId { get; set; }
 
         /// <summary>
         /// Gets or sets the pickup address identifier
         /// </summary>
+        [JsonRequired]
         public int? PickupAddressId { get; set; }
 
         /// <summary>
@@ -64,16 +68,19 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets an order status identifier
         /// </summary>
+        [JsonRequired]
         public int OrderStatusId { get; set; }
 
         /// <summary>
         /// Gets or sets the shipping status identifier
         /// </summary>
+        [JsonRequired]
         public int ShippingStatusId { get; set; }
 
         /// <summary>
         /// Gets or sets the payment status identifier
         /// </summary>
+        [JsonRequired]
         public int PaymentStatusId { get; set; }
 
         /// <summary>
@@ -84,11 +91,13 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the customer currency code (at the moment of order placing)
         /// </summary>
+        [JsonRequired]
         public string CustomerCurrencyCode { get; set; }
 
         /// <summary>
         /// Gets or sets the currency rate
         /// </summary>
+        [JsonRequired]
         public decimal CurrencyRate { get; set; }
 
         /// <summary>
@@ -104,41 +113,49 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the order subtotal (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal OrderSubtotalInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the order subtotal (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal OrderSubtotalExclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the order subtotal discount (include tax)
         /// </summary>
+
         public decimal OrderSubTotalDiscountInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the order subtotal discount (exclude tax)
         /// </summary>
+
         public decimal OrderSubTotalDiscountExclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the order shipping (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal OrderShippingInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the order shipping (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal OrderShippingExclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the payment method additional fee (incl tax)
         /// </summary>
+
         public decimal PaymentMethodAdditionalFeeInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the payment method additional fee (exclude tax)
         /// </summary>
+
         public decimal PaymentMethodAdditionalFeeExclTax { get; set; }
 
         /// <summary>
@@ -159,6 +176,7 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the order total
         /// </summary>
+        [JsonRequired]
         public decimal OrderTotal { get; set; }
 
         /// <summary>
@@ -184,6 +202,7 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the customer language identifier
         /// </summary>
+        [JsonRequired]
         public int CustomerLanguageId { get; set; }
 
         /// <summary>
@@ -204,16 +223,19 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the card type
         /// </summary>
+        [JsonRequired]
         public string CardType { get; set; }
 
         /// <summary>
         /// Gets or sets the card name
         /// </summary>
+        [JsonRequired]
         public string CardName { get; set; }
 
         /// <summary>
         /// Gets or sets the card number
         /// </summary>
+        [JsonRequired]
         public string CardNumber { get; set; }
 
         /// <summary>
@@ -224,21 +246,25 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the card CVV2
         /// </summary>
+        [JsonRequired]
         public string CardCvv2 { get; set; }
 
         /// <summary>
         /// Gets or sets the card expiration month
         /// </summary>
+        [JsonRequired]
         public string CardExpirationMonth { get; set; }
 
         /// <summary>
         /// Gets or sets the card expiration year
         /// </summary>
+        [JsonRequired]
         public string CardExpirationYear { get; set; }
 
         /// <summary>
         /// Gets or sets the authorization transaction identifier
         /// </summary>
+        [JsonRequired]
         public string AuthorizationTransactionId { get; set; }
 
         /// <summary>
@@ -254,6 +280,7 @@ namespace Grabble.Data.Domain.Order
         /// <summary>
         /// Gets or sets the capture transaction identifier
         /// </summary>
+        [JsonRequired]
         public string CaptureTransactionId { get; set; }
 
         /// <summary>
