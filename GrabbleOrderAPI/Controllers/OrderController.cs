@@ -7,7 +7,7 @@ namespace Grabble.OrderAPI.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService iorder;
@@ -18,21 +18,23 @@ namespace Grabble.OrderAPI.Controllers
             this.orderservice = orderservice;
         }
 
-        // GET: api/Order
+        // GET: api/v1/Order
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Order/5
+        // GET: api/v1/Order/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Order Get(int id)
         {
-            return "value";
+          
+                return orderservice.GetUser(id);
+            
         }
 
-        // POST: api/Order
+        // POST: api/v1/Order
         [HttpPost]
         public void Post([FromBody] Order order)
         {
@@ -42,13 +44,13 @@ namespace Grabble.OrderAPI.Controllers
             }
         }
 
-        // PUT: api/Order/5
+        // PUT: api/v1/Order/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/v1/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
