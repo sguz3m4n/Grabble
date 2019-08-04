@@ -1,9 +1,25 @@
 ﻿Migration command
-- add-migration migration name -context contextname
+- add-migration <migrationname> -context <contextname>
+
+For MySQL
+CREATE TABLE `__EFMigrationsHistory` 
+( 
+    `MigrationId` nvarchar(150) NOT NULL, 
+    `ProductVersion` nvarchar(32) NOT NULL, 
+     PRIMARY KEY (`MigrationId`) 
+);
 
 Database command
-- update-database
+- update-database -context <contextname>
 
 Connection Strings
 - target connection strings are located in the project resource file. 
 - target connection string is referenced in OrderContextFactory class
+
+
+# dotnet method
+# Adda new migration to the project
+dotnet ef migrations add <migrationname> --context <contextname> -- project GrabbleRepository
+
+#Finally run all migrations associated with context
+dotnet ef database update --context ApplicationContext --project GrabbleRepository 

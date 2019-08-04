@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace Grabble.Repository
 {
-    public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
+  public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
+  {
+    public ApplicationContext CreateDbContext(string[] args)
     {
-        public ApplicationContext CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+      var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
 
-            //use the resource connection string to switch database targets
+      //use the resource connection string to switch database targets
 #if DEBUG
-            optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);
+      optionsBuilder.UseMySql(Resources.mysqlDev);
 #else
-            optionsBuilder.UseSqlServer(Resources.connStage); optionsBuilder.UseSqlServer(Resources.connStage);
+            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("connStage"));
 #endif
-            return new ApplicationContext(optionsBuilder.Options);
-        }
+      return new ApplicationContext(optionsBuilder.Options);
     }
+  }
 }
 
