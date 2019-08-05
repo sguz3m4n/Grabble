@@ -30,16 +30,14 @@ namespace Order.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddMvc();
-#if DEBUG
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connStageMySql")));
-#else
-            services.AddDbContext<ApplicationContext>(options => options.UseMySql(Configuration.GetConnectionString("connStageMySql")));
-#endif
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<OrderService>();
-     
+            {
+                services.AddMvc();
+                services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connStageSqlServer")));
+                services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+                services.AddTransient<IOrderService, OrderService>();
+
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

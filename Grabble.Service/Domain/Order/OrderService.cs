@@ -7,12 +7,7 @@ namespace Grabble.Services
 {
     public class OrderService : IOrderService
     {
-        private Order order;
 
-        public OrderService()
-        {
-            this.order = new Order();
-        }
         private IRepository<Order> orderRespository;
 
         public OrderService(IRepository<Order> orderrepository)

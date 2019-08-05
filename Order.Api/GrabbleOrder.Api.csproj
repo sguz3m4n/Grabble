@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Grabble.Data\Grabble.Data.csproj" />
     <ProjectReference Include="..\Grabble.Service\Grabble.Service.csproj" />
   </ItemGroup>
 
