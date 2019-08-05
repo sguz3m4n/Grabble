@@ -1,0 +1,18 @@
+title Grabble Order Fulfillment
+
+Shopper->E-Commerce Site:1 Place Order on E-Commerce Site
+E-Commerce Site->GrabbleOrderGateway:1 Register order in Grabble
+GrabbleOrderGateway-->Shopper:2a Email / SMS
+Shopper->GrabbleOrderGateway: 2a Visit with Token
+GrabbleOrderGateway-->E-Commerce Site: 2b Respond with token  
+
+E-Commerce Site->Shopper:2b Send Redirect information with token
+Shopper->GrabbleOrderGateway:2b Redirect with Token
+GrabbleOrderGateway->Shopper:3 Show Choose Familiar Grabbler Screen w/ Email, Number, Name
+Shopper->GrabbleOrderGateway:3 Register Grabbler in Grabble
+GrabbleOrderGateway->Grabbler: Send Request To Grabbler
+Grabbler->GrabbleOrderGateway: Accept Grabble
+GrabbleOrderGateway->GrabblerService: Save Grabbler Data
+GrabbleOrderGateway->Shopper:Notify Shopper
+GrabbleOrderGateway->E-Commerce Site: Notify Site
+GrabbleOrderGateway->OrderService:Save Order Info

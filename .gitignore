@@ -261,3 +261,17 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/GrabbleOrderAPI/appsettings.json
+/GrabbleOrderAPI/appsettings.Development.json
+/GrabbleRepository/Properties/Resources.resx
+/GrabbleRepository/Properties/Resources.Designer.cs
+/GrabbleOrderAPI/Properties/launchSettings.json
+/GrabbleRepository/Migrations
+/GrabbleRepository/appsettings.Development.json
+/GrabbleRepository/appsettings.json
+/Grabble/Properties/Resources.resx
+/Grabble/Properties/Resources.Designer.cs
+/Grabble/Properties/Resources.resx
+
+/Order.Api/Properties/PublishProfiles/GrabbleOrderAPIv1 - Web Deploy.pubxml
+/Order.Api/Grabble.Order.Api.csproj
