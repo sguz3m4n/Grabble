@@ -1,4 +1,4 @@
-﻿using Grabble.Data.Domain.Order;
+﻿using Grabble.Data.Domain;
 using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 

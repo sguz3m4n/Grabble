@@ -14,8 +14,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts" Version="2.2.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GrabbleServices\Grabble.Services.csproj" />
-  </ItemGroup>
-
 </Project>

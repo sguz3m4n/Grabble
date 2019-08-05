@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Detail
+namespace Grabble.Data.Domain
 {
     [Table("Product")]
     public class Product

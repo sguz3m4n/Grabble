@@ -1,10 +1,11 @@
-﻿using Grabble.Data.Domain.Order;
+﻿using Grabble.Data.Domain;
+using System.Collections.Generic;
 
 namespace Grabble.Services
 {
     public interface IOrderService
     {
-        //IEnumberable<Order> GetOrders();
+        IEnumerable<Order> GetOrders();
         Order GetUser(int id);
         void InsertOrder(Order order);
         void UpdateOrder(Order order);

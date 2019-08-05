@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Order
+namespace Grabble.Data.Domain
 {
     [Table("Order")]
     [JsonObject("Order")]
@@ -443,6 +443,5 @@ namespace Grabble.Data.Domain.Order
         //}
 
         //#endregion
-
     }
 }

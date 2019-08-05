@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Grabble.Data.Domain.Order;
+﻿using Grabble.Data.Domain;
 using Grabble.Repository.Interface;
+using System;
+using System.Collections.Generic;
 
 namespace Grabble.Services
 {
     public class OrderService : IOrderService
     {
-      private  IRepository<Order> orderRespository;
+        private Order order;
+
+        public OrderService()
+        {
+            this.order = new Order();
+        }
+        private IRepository<Order> orderRespository;
 
         public OrderService(IRepository<Order> orderrepository)
         {
@@ -20,6 +25,11 @@ namespace Grabble.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Order> GetOrders()
+        {
+            throw new NotImplementedException();
+        }
+
         public Order GetUser(int id)
         {
             return orderRespository.Get(id);
@@ -27,7 +37,7 @@ namespace Grabble.Services
 
         public void InsertOrder(Order order)
         {
-             orderRespository.Insert(order);
+            orderRespository.Insert(order);
         }
 
         public void UpdateOrder(Order order)

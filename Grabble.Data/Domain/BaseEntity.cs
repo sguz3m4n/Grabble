@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Grabble.Data.Domain
 {
     [NotMapped]
-    public class BaseEntity
+   abstract public class BaseEntity
     {
         #region Construtor
 
