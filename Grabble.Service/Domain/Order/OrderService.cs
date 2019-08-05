@@ -22,7 +22,7 @@ namespace Grabble.Services
 
         public IEnumerable<Order> GetOrders()
         {
-            throw new NotImplementedException();
+            return orderRespository.GetAll();
         }
 
         public Order GetUser(int id)
