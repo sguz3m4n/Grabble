@@ -12,13 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		OrderJsonTemplate.txt = OrderJsonTemplate.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.Data", "Grabble.Data\Grabble.Data.csproj", "{D0799A2D-1C79-411C-B01A-309485B4F371}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Data", "Grabble.Data\Grabble.Data.csproj", "{D0799A2D-1C79-411C-B01A-309485B4F371}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.Repository", "Grabble.Repository\Grabble.Repository.csproj", "{96D4A9F3-BE3A-42C4-BE9E-C48EFD771763}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "Grabble.Repository\Grabble.Repository.csproj", "{96D4A9F3-BE3A-42C4-BE9E-C48EFD771763}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.Service", "Grabble.Service\Grabble.Service.csproj", "{D591FCB7-BACE-417A-AECB-960BD5E7D41F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Service", "Grabble.Service\Grabble.Service.csproj", "{D591FCB7-BACE-417A-AECB-960BD5E7D41F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabbleOrder.Api", "Order.Api\GrabbleOrder.Api.csproj", "{9F0B09CF-B983-4267-ACBA-3D9F203ADA52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Order.Api", "Order.Api\Grabble.Order.Api.csproj", "{9F0B09CF-B983-4267-ACBA-3D9F203ADA52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
