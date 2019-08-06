@@ -278,3 +278,5 @@ GrabbleServices/Properties/Resources.resx
 GrabbleServices/Properties/Resources.Desinger.cs
 GrabbleOrderAPI/appsettings.Production.json         
 GrabbleOrderAPI/appsettings.Staging.json
+/Order.Api/Properties/PublishProfiles/GrabbleOrderAPIv1 - Web Deploy.pubxml
+/Order.Api/Grabble.Order.Api.csproj
