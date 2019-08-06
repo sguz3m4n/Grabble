@@ -14,6 +14,8 @@ namespace Grabble.Repository
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+
+      //For some reason if this si present the migration fails, but if it is absent the application fails
       optionsBuilder.UseMySql(Resources.mysqlDev);
     }
 
