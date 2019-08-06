@@ -273,3 +273,5 @@ __pycache__/
 /Grabble/Properties/Resources.Designer.cs
 /Grabble/Properties/Resources.resx
 
+/Order.Api/Properties/PublishProfiles/GrabbleOrderAPIv1 - Web Deploy.pubxml
+/Order.Api/Grabble.Order.Api.csproj
