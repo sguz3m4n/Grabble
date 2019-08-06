@@ -6,8 +6,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Grabble.Data.Domain
 {
+    [JsonObject("Product")]
     [Table("Product")]
-    public class Product
+    public class Item:BaseEntity
     {
         //private ICollection<GiftCard> _associatedGiftCards;
 
@@ -21,12 +22,13 @@ namespace Grabble.Data.Domain
         #endregion
 
         #region Properties
-   
+
 
         /// <summary>
         /// Gets or sets the order item identifier
         /// </summary>
-        public Guid OrderItemGuid { get; set; }
+        [JsonRequired]
+        public Guid ItemGuid { get; set; }
 
         /// <summary>
         /// Gets or sets the order identifier
@@ -46,21 +48,25 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the unit price in primary store currency (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal UnitPriceInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the unit price in primary store currency (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal UnitPriceExclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the price in primary store currency (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal PriceInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the price in primary store currency (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal PriceExclTax { get; set; }
 
         /// <summary>
@@ -76,6 +82,7 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the original cost of this order item (when an order was placed), qty 1
         /// </summary>
+        [JsonRequired]
         public decimal OriginalProductCost { get; set; }
 
         /// <summary>
@@ -107,6 +114,7 @@ namespace Grabble.Data.Domain
         /// Gets or sets the total weight of one item
         /// It's nullable for compatibility with the previous version of nopCommerce where was no such property
         /// </summary>
+        [JsonRequired]
         public decimal? ItemWeight { get; set; }
 
         ///// <summary>
