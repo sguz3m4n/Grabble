@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Grabble.Repository.Migrations
+namespace Grabble.Repository.Migrations.Application
 {
     [DbContext(typeof(ApplicationContext))]
     partial class ApplicationContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,74 @@ namespace Grabble.Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Grabble.Data.Domain.Order.Order", b =>
+            modelBuilder.Entity("Grabble.Data.Domain.Item", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AttributeDescription");
+
+                    b.Property<string>("AttributesXml");
+
+                    b.Property<string>("BarcodeNumber")
+                        .IsRequired();
+
+                    b.Property<string>("ContentCode");
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<decimal>("DiscountAmountExclTax");
+
+                    b.Property<decimal>("DiscountAmountInclTax");
+
+                    b.Property<int>("DownloadCount");
+
+                    b.Property<string>("IPAddress");
+
+                    b.Property<bool>("IsDownloadActivated");
+
+                    b.Property<Guid>("ItemGuid");
+
+                    b.Property<decimal>("ItemHeight");
+
+                    b.Property<decimal>("ItemVolume");
+
+                    b.Property<decimal?>("ItemWeight")
+                        .IsRequired();
+
+                    b.Property<decimal>("ItemWidht");
+
+                    b.Property<int?>("LicenseDownloadId");
+
+                    b.Property<string>("ModifyBy");
+
+                    b.Property<DateTime>("ModifyDate");
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<decimal>("OriginalProductCost");
+
+                    b.Property<decimal>("PriceExclTax");
+
+                    b.Property<decimal>("PriceInclTax");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<decimal>("UnitPriceExclTax");
+
+                    b.Property<decimal>("UnitPriceInclTax");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Item");
+                });
+
+            modelBuilder.Entity("Grabble.Data.Domain.Order", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,6 +130,8 @@ namespace Grabble.Repository.Migrations
 
                     b.Property<string>("CheckoutAttributesXml");
 
+                    b.Property<int>("ConsumerId");
+
                     b.Property<string>("CreateBy");
 
                     b.Property<DateTime>("CreateDate");
@@ -77,8 +146,6 @@ namespace Grabble.Repository.Migrations
 
                     b.Property<string>("CustomerCurrencyCode")
                         .IsRequired();
-
-                    b.Property<int>("CustomerId");
 
                     b.Property<string>("CustomerIp");
 
