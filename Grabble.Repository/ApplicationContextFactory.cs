@@ -1,5 +1,4 @@
-﻿
-using Grabble.Repository.Properties;
+﻿using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using MySql.Data.MySqlClient;

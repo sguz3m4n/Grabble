@@ -5,11 +5,11 @@ using MySql.Data.MySqlClient;
 
 namespace Grabble.Repository.Context
 {
-    public class OrderContextFactory : IDesignTimeDbContextFactory<OrderContext>
+    public class ItemContextFactory : IDesignTimeDbContextFactory<ItemContext>
     {
-        public OrderContext CreateDbContext(string[] args)
+        public ItemContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<OrderContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<ItemContext>();
             var connstring = new MySqlConnectionStringBuilder
             {
                 Server = Resources.connServer,
@@ -27,8 +27,7 @@ namespace Grabble.Repository.Context
             optionsBuilder.UseMySql(connection);
 
 #endif
-            return new OrderContext(optionsBuilder.Options);
+            return new ItemContext(optionsBuilder.Options);
         }
-
     }
 }

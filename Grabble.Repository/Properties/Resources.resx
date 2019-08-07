@@ -127,7 +127,7 @@
     <value>Data Source=(localdb)\ProjectsV13;Initial Catalog=Order;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</value>
   </data>
   <data name="connPassword" xml:space="preserve">
-    <value>NSDTgrab1!</value>
+    <value>UpdatedPassword1!</value>
   </data>
   <data name="connServer" xml:space="preserve">
     <value>143.95.227.53</value>

@@ -40,7 +40,7 @@ namespace Grabble.Data.Domain
         /// Gets or sets the customer identifier
         /// </summary>
         [JsonRequired]
-        public int CustomerId { get; set; }
+        public int ConsumerId { get; set; }
 
         /// <summary>
         /// Gets or sets the billing address identifier
