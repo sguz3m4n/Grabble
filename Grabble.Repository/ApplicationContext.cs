@@ -17,6 +17,7 @@ namespace Grabble.Repository
             //mapping examples in file
             new OrderMap(modelbuilder.Entity<Order>());
             new ItemMap(modelbuilder.Entity<Item>());
+            new ConsumerMap(modelbuilder.Entity<Consumer>());
         }
     }
 }
