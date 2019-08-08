@@ -8,6 +8,8 @@ Step3 - Execute command
 Step4 - Execute command
 	--> update-database -context <contextname>
 	--> Update-Database -context ApplicationContext
+	--> Use Application context to migrate all
+	--> Use specific context to migrate name context
 
 # dotnet method
 # Add a new migration to the project

@@ -1,19 +1,18 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Grabble.Data.Domain
 {
-    [Table("Product")]
-    public class Product
+    [JsonObject("Item")]
+    [Table("Item")]
+    public class Item : BaseEntity
     {
         //private ICollection<GiftCard> _associatedGiftCards;
 
         #region Constructor
 
-        public void Item()
+        public Item()
         {
 
         }
@@ -21,17 +20,24 @@ namespace Grabble.Data.Domain
         #endregion
 
         #region Properties
-   
+
 
         /// <summary>
         /// Gets or sets the order item identifier
         /// </summary>
-        public Guid OrderItemGuid { get; set; }
+        [JsonRequired]
+        public Guid ItemGuid { get; set; }
 
         /// <summary>
         /// Gets or sets the order identifier
         /// </summary>
         public int OrderId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the product Barcode number
+        /// </summary>
+        [JsonRequired]
+        public string BarcodeNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the product identifier
@@ -46,21 +52,25 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the unit price in primary store currency (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal UnitPriceInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the unit price in primary store currency (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal UnitPriceExclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the price in primary store currency (include tax)
         /// </summary>
+        [JsonRequired]
         public decimal PriceInclTax { get; set; }
 
         /// <summary>
         /// Gets or sets the price in primary store currency (exclude tax)
         /// </summary>
+        [JsonRequired]
         public decimal PriceExclTax { get; set; }
 
         /// <summary>
@@ -76,6 +86,7 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the original cost of this order item (when an order was placed), qty 1
         /// </summary>
+        [JsonRequired]
         public decimal OriginalProductCost { get; set; }
 
         /// <summary>
@@ -105,9 +116,33 @@ namespace Grabble.Data.Domain
 
         /// <summary>
         /// Gets or sets the total weight of one item
-        /// It's nullable for compatibility with the previous version of nopCommerce where was no such property
+        /// 
         /// </summary>
+        [JsonRequired]
         public decimal? ItemWeight { get; set; }
+
+        /// <summary>
+        /// Gets or sets the total height of one item
+        /// 
+        /// </summary>
+        [JsonRequired]
+        public decimal ItemHeight { get; set; }
+
+        /// <summary>
+        /// Gets or sets the total width of one item
+        /// 
+        /// </summary>
+        [JsonRequired]
+        public decimal ItemWidht { get; set; }
+
+        /// <summary>
+        /// Gets or sets the total volume of one item
+        /// 
+        /// </summary>
+        [JsonRequired]
+        public decimal ItemVolume { get; set; }
+
+        public string ContentCode { get; set; }
 
         ///// <summary>
         ///// Gets or sets the rental product start date (null if it's not a rental product)
