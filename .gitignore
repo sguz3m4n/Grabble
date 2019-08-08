@@ -274,14 +274,3 @@ __pycache__/
 /Grabble/Properties/Resources.Designer.cs
 /Grabble/Properties/Resources.resx
 
-/Order.Api/Properties/PublishProfiles/GrabbleOrderAPIv1 - Web Deploy.pubxml
-/Order.Api/Grabble.Order.Api.csproj
-/Grabble.Item.Api/appsettings.Development.json
-/Grabble.Item.Api/appsettings.json
-/Order.Api/appsettings.Development.json
-/Order.Api/appsettings.json
-/Grabble.Item.Api/Properties/launchSettings.json
-/Grabble.Repository/Migrations/ApplicationContextModelSnapshot.cs
-/Grabble.Order.Api/Properties/launchSettings.json
-/Grabble.Order.Api/appsettings.Development.json
-/Grabble.Order.Api/appsettings.json
