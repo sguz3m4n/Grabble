@@ -16,6 +16,8 @@ namespace Grabble.Repository
             //create order map method in Grabble.Data project
             //mapping examples in file
             new OrderMap(modelbuilder.Entity<Order>());
+            new ItemMap(modelbuilder.Entity<Item>());
+            new ConsumerMap(modelbuilder.Entity<Consumer>());
         }
     }
 }

@@ -1,25 +1,34 @@
 ﻿using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using MySql.Data.MySqlClient;
 
-namespace Grabble.Repository.Context
+namespace Grabble.Repository.Domain
 {
-    public class OrderContextFactory : IDesignTimeDbContextFactory<OrderDbContext>
+    public class OrderContextFactory : IDesignTimeDbContextFactory<OrderContext>
     {
-        //migration commands will target this method to create database
-        //
-        public OrderDbContext CreateDbContext(string[] args)
+        public OrderContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<OrderDbContext>();
-            //use the resource connection string to switch database targets
+            var optionsBuilder = new DbContextOptionsBuilder<OrderContext>();
+            var connstring = new MySqlConnectionStringBuilder
+            {
+                Server = Resources.connServer,
+                UserID = Resources.connUserId,
+                Password = Resources.connPassword,
+                Database = Resources.connDatabase
+            };
+            var connection = new MySqlConnection(connstring.ToString());
+
+            //use the resource connection string to point to target database 
+            //optionsBuilder.UseSqlServer(Resources.connLocalProjectsV13);
 #if DEBUG
-optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);
+            optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);        
 #else
-            optionsBuilder.UseSqlServer(Resources.connStage); optionsBuilder.UseSqlServer(Resources.connStage);
+            optionsBuilder.UseMySql(connection);
+
 #endif
-
-
-            return new OrderDbContext(optionsBuilder.Options);
+            return new OrderContext(optionsBuilder.Options);
         }
+
     }
 }

@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using MySql.Data.MySqlClient;
 
-namespace Grabble.Repository
+namespace Grabble.Repository.Domain.Consumer
 {
-    public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
+    public class ConsumerContextFactory : IDesignTimeDbContextFactory<ConsumerContext>
     {
-        public ApplicationContext CreateDbContext(string[] args)
+        public ConsumerContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<ConsumerContext>();
             var connstring = new MySqlConnectionStringBuilder
             {
                 Server = Resources.connServer,
@@ -27,8 +27,7 @@ namespace Grabble.Repository
             optionsBuilder.UseMySql(connection);
 
 #endif
-            return new ApplicationContext(optionsBuilder.Options);
+            return new ConsumerContext(optionsBuilder.Options);
         }
     }
 }
-
