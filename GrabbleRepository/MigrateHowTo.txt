@@ -1,9 +1,0 @@
-﻿Migration command
-- add-migration migration name -context contextname
-
-Database command
-- update-database
-
-Connection Strings
-- target connection strings are located in the project resource file. 
-- target connection string is referenced in OrderContextFactory class

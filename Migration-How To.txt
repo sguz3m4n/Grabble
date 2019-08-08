@@ -1,0 +1,12 @@
+Step1 - Open Package Manager Console 
+	--> Tools --> Nuget Package Manager --> Package Manager Console
+Step2 - Select Default project
+	--> This is where the context and context factory is located
+Step3 - Execute command
+	--> Add-Migration <migrationname> -context <contextname>
+	-->	Add-Migration InitialMigration -context ApplicationContext
+Step4 - Execute command
+	--> update-database -context <contextname>
+	--> Update-Database -context ApplicationContext
+	--> Use Application context to migrate all
+	--> Use specific context to migrate name context
