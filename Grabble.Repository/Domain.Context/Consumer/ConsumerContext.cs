@@ -1,14 +1,13 @@
 ﻿using Grabble.Data.Domain;
 using Microsoft.EntityFrameworkCore;
 
-
-namespace Grabble.Repository.Domain.Item
+namespace Grabble.Repository.Domain
 {
-    public  class ItemContext:DbContext
+    public  class ConsumerContext:DbContext
     {
         #region Constructor
 
-        public ItemContext(DbContextOptions<ItemContext> options) : base(options)
+        public ConsumerContext(DbContextOptions<ConsumerContext> options) : base(options)
         {
 
         }
@@ -22,7 +21,7 @@ namespace Grabble.Repository.Domain.Item
             base.OnModelCreating(builder);
             //create order map method in Grabble.Data project
             //mapping examples in file
-            new ItemMap(builder.Entity<Grabble.Data.Domain.Item>());
+            new ConsumerMap(builder.Entity<Grabble.Data.Domain.Consumer>());
         }
 
         #endregion

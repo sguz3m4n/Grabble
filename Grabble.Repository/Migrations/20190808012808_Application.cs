@@ -2,12 +2,57 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Grabble.Repository.Migrations.Application
+namespace Grabble.Repository.Migrations
 {
     public partial class Application : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Consumer",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    CreateBy = table.Column<string>(nullable: true),
+                    ModifyDate = table.Column<DateTime>(nullable: false),
+                    ModifyBy = table.Column<string>(nullable: true),
+                    IPAddress = table.Column<string>(nullable: true),
+                    CustomerGuid = table.Column<Guid>(nullable: false),
+                    Username = table.Column<string>(nullable: false),
+                    Firstname = table.Column<string>(nullable: false),
+                    Lastname = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Phone = table.Column<string>(nullable: false),
+                    EmailToRevalidate = table.Column<string>(nullable: false),
+                    Age = table.Column<int>(nullable: false),
+                    Gender = table.Column<string>(nullable: false),
+                    AdminComment = table.Column<string>(nullable: true),
+                    IsTaxExempt = table.Column<bool>(nullable: false),
+                    AffiliateId = table.Column<int>(nullable: false),
+                    VendorId = table.Column<int>(nullable: false),
+                    HasShoppingCartItems = table.Column<bool>(nullable: false),
+                    RequireReLogin = table.Column<bool>(nullable: false),
+                    FailedLoginAttempts = table.Column<int>(nullable: false),
+                    CannotLoginUntilDateUtc = table.Column<DateTime>(nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Deleted = table.Column<bool>(nullable: false),
+                    IsSystemAccount = table.Column<bool>(nullable: false),
+                    SystemName = table.Column<string>(nullable: true),
+                    LastIpAddress = table.Column<string>(nullable: true),
+                    CreatedOnUtc = table.Column<DateTime>(nullable: false),
+                    LastLoginDateUtc = table.Column<DateTime>(nullable: true),
+                    LastActivityDateUtc = table.Column<DateTime>(nullable: false),
+                    RegisteredInStoreId = table.Column<int>(nullable: false),
+                    BillingAddressId = table.Column<int>(nullable: false),
+                    ShippingAddressId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Consumer", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Item",
                 columns: table => new
@@ -21,6 +66,7 @@ namespace Grabble.Repository.Migrations.Application
                     IPAddress = table.Column<string>(nullable: true),
                     ItemGuid = table.Column<Guid>(nullable: false),
                     OrderId = table.Column<int>(nullable: false),
+                    itemName = table.Column<string>(nullable: true),
                     BarcodeNumber = table.Column<string>(nullable: false),
                     ProductId = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
@@ -40,7 +86,25 @@ namespace Grabble.Repository.Migrations.Application
                     ItemHeight = table.Column<decimal>(nullable: false),
                     ItemWidht = table.Column<decimal>(nullable: false),
                     ItemVolume = table.Column<decimal>(nullable: false),
-                    ContentCode = table.Column<string>(nullable: true)
+                    ContentCode = table.Column<string>(nullable: true),
+                    Sodium = table.Column<decimal>(nullable: false),
+                    Cholesterol = table.Column<decimal>(nullable: false),
+                    SaturatedFat = table.Column<decimal>(nullable: false),
+                    TransFat = table.Column<decimal>(nullable: false),
+                    TotalFat = table.Column<decimal>(nullable: false),
+                    Calories = table.Column<decimal>(nullable: false),
+                    TotalCarbohydrate = table.Column<decimal>(nullable: false),
+                    DietaryFiber = table.Column<decimal>(nullable: false),
+                    Sugars = table.Column<decimal>(nullable: false),
+                    Protein = table.Column<decimal>(nullable: false),
+                    Iron = table.Column<decimal>(nullable: false),
+                    Calcium = table.Column<decimal>(nullable: false),
+                    Potassium = table.Column<decimal>(nullable: false),
+                    VitaminA = table.Column<decimal>(nullable: false),
+                    VitaminB = table.Column<decimal>(nullable: false),
+                    VitaminC = table.Column<decimal>(nullable: false),
+                    VitaminD = table.Column<decimal>(nullable: false),
+                    ServingSize = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -122,6 +186,9 @@ namespace Grabble.Repository.Migrations.Application
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Consumer");
+
             migrationBuilder.DropTable(
                 name: "Item");
 

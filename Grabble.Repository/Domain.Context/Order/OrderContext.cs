@@ -2,7 +2,7 @@
 using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 
-namespace Grabble.Repository.Context
+namespace Grabble.Repository.Domain
 {
     public class OrderContext : DbContext
     {

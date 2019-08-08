@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Grabble.Services
 {
-    public class OrderService : IOrderService
+    public class ItemService : IItemService
     {
 
         private IRepository<Order> orderRespository;
 
-        public OrderService(IRepository<Order> orderrepository)
+        public ItemService(IRepository<Order> orderrepository)
         {
             this.orderRespository = orderrepository;
         }
@@ -25,7 +25,7 @@ namespace Grabble.Services
             return orderRespository.GetAll();
         }
 
-        public Order GetUser(int id)
+        public Order GetOrder(int id)
         {
             return orderRespository.Get(id);
         }

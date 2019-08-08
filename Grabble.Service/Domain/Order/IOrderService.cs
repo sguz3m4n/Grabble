@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Grabble.Services
 {
-    public interface IOrderService
+    public interface IItemService
     {
         IEnumerable<Order> GetOrders();
-        Order GetUser(int id);
+        Order GetOrder(int id);
         void InsertOrder(Order order);
         void UpdateOrder(Order order);
         void DeleteOrder(int id);
