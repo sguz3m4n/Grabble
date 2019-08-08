@@ -4,20 +4,108 @@ using Grabble.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Grabble.Repository.Migrations.Application
+namespace Grabble.Repository.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190808012808_Application")]
+    partial class Application
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Grabble.Data.Domain.Consumer", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("AdminComment");
+
+                    b.Property<int>("AffiliateId");
+
+                    b.Property<int>("Age");
+
+                    b.Property<int?>("BillingAddressId")
+                        .IsRequired();
+
+                    b.Property<DateTime?>("CannotLoginUntilDateUtc");
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<DateTime>("CreatedOnUtc");
+
+                    b.Property<Guid>("CustomerGuid");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("EmailToRevalidate")
+                        .IsRequired();
+
+                    b.Property<int>("FailedLoginAttempts");
+
+                    b.Property<string>("Firstname")
+                        .IsRequired();
+
+                    b.Property<string>("Gender")
+                        .IsRequired();
+
+                    b.Property<bool>("HasShoppingCartItems");
+
+                    b.Property<string>("IPAddress");
+
+                    b.Property<bool>("IsSystemAccount");
+
+                    b.Property<bool>("IsTaxExempt");
+
+                    b.Property<DateTime>("LastActivityDateUtc");
+
+                    b.Property<string>("LastIpAddress");
+
+                    b.Property<DateTime?>("LastLoginDateUtc");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired();
+
+                    b.Property<string>("ModifyBy");
+
+                    b.Property<DateTime>("ModifyDate");
+
+                    b.Property<string>("Phone")
+                        .IsRequired();
+
+                    b.Property<int>("RegisteredInStoreId");
+
+                    b.Property<bool>("RequireReLogin");
+
+                    b.Property<int?>("ShippingAddressId")
+                        .IsRequired();
+
+                    b.Property<string>("SystemName");
+
+                    b.Property<string>("Username")
+                        .IsRequired();
+
+                    b.Property<int>("VendorId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Consumer");
+                });
 
             modelBuilder.Entity("Grabble.Data.Domain.Item", b =>
                 {
@@ -32,11 +120,19 @@ namespace Grabble.Repository.Migrations.Application
                     b.Property<string>("BarcodeNumber")
                         .IsRequired();
 
+                    b.Property<decimal>("Calcium");
+
+                    b.Property<decimal>("Calories");
+
+                    b.Property<decimal>("Cholesterol");
+
                     b.Property<string>("ContentCode");
 
                     b.Property<string>("CreateBy");
 
                     b.Property<DateTime>("CreateDate");
+
+                    b.Property<decimal>("DietaryFiber");
 
                     b.Property<decimal>("DiscountAmountExclTax");
 
@@ -45,6 +141,8 @@ namespace Grabble.Repository.Migrations.Application
                     b.Property<int>("DownloadCount");
 
                     b.Property<string>("IPAddress");
+
+                    b.Property<decimal>("Iron");
 
                     b.Property<bool>("IsDownloadActivated");
 
@@ -69,17 +167,45 @@ namespace Grabble.Repository.Migrations.Application
 
                     b.Property<decimal>("OriginalProductCost");
 
+                    b.Property<decimal>("Potassium");
+
                     b.Property<decimal>("PriceExclTax");
 
                     b.Property<decimal>("PriceInclTax");
 
                     b.Property<int>("ProductId");
 
+                    b.Property<decimal>("Protein");
+
                     b.Property<int>("Quantity");
+
+                    b.Property<decimal>("SaturatedFat");
+
+                    b.Property<decimal>("ServingSize");
+
+                    b.Property<decimal>("Sodium");
+
+                    b.Property<decimal>("Sugars");
+
+                    b.Property<decimal>("TotalCarbohydrate");
+
+                    b.Property<decimal>("TotalFat");
+
+                    b.Property<decimal>("TransFat");
 
                     b.Property<decimal>("UnitPriceExclTax");
 
                     b.Property<decimal>("UnitPriceInclTax");
+
+                    b.Property<decimal>("VitaminA");
+
+                    b.Property<decimal>("VitaminB");
+
+                    b.Property<decimal>("VitaminC");
+
+                    b.Property<decimal>("VitaminD");
+
+                    b.Property<string>("itemName");
 
                     b.HasKey("Id");
 

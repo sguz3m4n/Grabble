@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Grabble.Data.Domain;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -32,6 +33,11 @@ namespace Grabble.Data.Domain
         /// Gets or sets the order identifier
         /// </summary>
         public int OrderId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the item name identifier
+        /// </summary>
+        public string itemName { get; set; }
 
         /// <summary>
         /// Gets or sets the product Barcode number
@@ -143,6 +149,44 @@ namespace Grabble.Data.Domain
         public decimal ItemVolume { get; set; }
 
         public string ContentCode { get; set; }
+
+        public decimal Sodium { get; set; }
+
+        public decimal Cholesterol { get; set; }
+
+        public decimal SaturatedFat { get; set; }
+
+        public decimal TransFat { get; set; }
+
+        public decimal TotalFat { get; set; }
+
+        public decimal Calories { get; set; }
+
+        public decimal TotalCarbohydrate { get; set; }
+
+        public decimal DietaryFiber { get; set; }
+
+        public decimal Sugars { get; set; }
+
+        public decimal Protein { get; set; }
+
+        public decimal Iron { get; set; }
+
+        public decimal Calcium { get; set; }
+
+        public decimal Potassium { get; set; }
+
+        public decimal VitaminA { get; set; }
+
+        public decimal VitaminB { get; set; }
+
+        public decimal VitaminC { get; set; }
+
+        public decimal VitaminD { get; set; }
+
+        public decimal ServingSize { get; set; }
+
+
 
         ///// <summary>
         ///// Gets or sets the rental product start date (null if it's not a rental product)

@@ -9,10 +9,10 @@ namespace GrabbleOrder.Api.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrderService orderservice;
+        private readonly IItemService orderservice;
         //private readonly OrderService orderservice;
 
-        public OrdersController(IOrderService orderservice)
+        public OrdersController(IItemService orderservice)
         {
             this.orderservice = orderservice;
         }
@@ -31,7 +31,7 @@ namespace GrabbleOrder.Api.Controllers
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
-            var result = orderservice.GetUser(id);
+            var result = orderservice.GetOrder(id);
             string json = JsonConvert.SerializeObject(result);
 
             return json;

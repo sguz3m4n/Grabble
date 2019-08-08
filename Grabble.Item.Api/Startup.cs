@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Grabble.Repository;
-using Grabble.Repository.Interface;
-using Grabble.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Order.Api
+namespace Grabble.Item.Api
 {
     public class Startup
     {
@@ -30,14 +26,6 @@ namespace Order.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            {
-                services.AddMvc();
-                services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connStageSqlServer")));
-                services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-                services.AddTransient<IItemService, ItemService>();
-
-            }
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

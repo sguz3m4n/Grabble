@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using MySql.Data.MySqlClient;
 
-namespace Grabble.Repository.Context
+namespace Grabble.Repository.Domain
 {
     public class OrderContextFactory : IDesignTimeDbContextFactory<OrderContext>
     {

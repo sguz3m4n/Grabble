@@ -3,11 +3,11 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Customer
+namespace Grabble.Data.Domain
 {
     [Table("Consumer")]
     [JsonObject("Consumer")]
-    public class Consumer
+    public class Consumer:BaseEntity
     {
         #region Constructor
         public Consumer()
