@@ -288,5 +288,6 @@ GrabbleOrderAPI/appsettings.Staging.json
 /Grabble.Item.Api/Properties/launchSettings.json
 /Grabble.Repository/Migrations/ApplicationContextModelSnapshot.cs
 /Grabble.Order.Api/Properties/launchSettings.json
+/Grabble.Order.Api/appsettings.Production.json
 /Grabble.Order.Api/appsettings.Development.json
 /Grabble.Order.Api/appsettings.json

@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Repository", "Grabb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Service", "Grabble.Service\Grabble.Service.csproj", "{D591FCB7-BACE-417A-AECB-960BD5E7D41F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Order.Api", "Order.Api\Grabble.Order.Api.csproj", "{9F0B09CF-B983-4267-ACBA-3D9F203ADA52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grabble.Order.Api", "Grabble.Order.Api\Grabble.Order.Api.csproj", "{9F0B09CF-B983-4267-ACBA-3D9F203ADA52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grabble.Item.Api", "Grabble.Item.Api\Grabble.Item.Api.csproj", "{E9956BDA-94A3-4EBF-B891-63BBAFC79A1A}"
 EndProject

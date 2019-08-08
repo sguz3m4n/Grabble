@@ -1,5 +1,6 @@
 ﻿using Grabble.Data.Domain;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Grabble.Repository
 {
@@ -7,7 +8,12 @@ namespace Grabble.Repository
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
+            Console.WriteLine(options);
+        }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+           // optionsBuilder.UseMySql();
         }
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
