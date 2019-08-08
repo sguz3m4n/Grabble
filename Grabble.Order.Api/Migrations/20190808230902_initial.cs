@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Grabble.Repository.Migrations
+namespace Grabble.Order.Api.Migrations
 {
-    public partial class Application : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace Grabble.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     CreateBy = table.Column<string>(nullable: true),
                     ModifyDate = table.Column<DateTime>(nullable: false),
@@ -58,7 +58,7 @@ namespace Grabble.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     CreateBy = table.Column<string>(nullable: true),
                     ModifyDate = table.Column<DateTime>(nullable: false),
@@ -116,7 +116,7 @@ namespace Grabble.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     CreateBy = table.Column<string>(nullable: true),
                     ModifyDate = table.Column<DateTime>(nullable: false),

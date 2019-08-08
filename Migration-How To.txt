@@ -10,3 +10,11 @@ Step4 - Execute command
 	--> Update-Database -context ApplicationContext
 	--> Use Application context to migrate all
 	--> Use specific context to migrate name context
+
+# dotnet method
+# Add a new migration to the project
+Step1 - Execute Command
+  --> dotnet ef migrations add <migrationname> --context <contextname> -- project GrabbleRepository
+#Finally run all migrations associated with context
+Step2 -  Execute command
+  --> dotnet ef database update --context ApplicationContext --project GrabbleRepository 
