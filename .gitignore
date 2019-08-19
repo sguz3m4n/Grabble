@@ -274,6 +274,12 @@ __pycache__/
 /Grabble/Properties/Resources.Designer.cs
 /Grabble/Properties/Resources.resx
 
+
+.vscode/
+GrabbleServices/Properties/Resources.resx
+GrabbleServices/Properties/Resources.Desinger.cs
+GrabbleOrderAPI/appsettings.Production.json         
+GrabbleOrderAPI/appsettings.Staging.json
 /Order.Api/Properties/PublishProfiles/GrabbleOrderAPIv1 - Web Deploy.pubxml
 /Order.Api/Grabble.Order.Api.csproj
 /Grabble.Item.Api/appsettings.Development.json
@@ -283,5 +289,7 @@ __pycache__/
 /Grabble.Item.Api/Properties/launchSettings.json
 /Grabble.Repository/Migrations/ApplicationContextModelSnapshot.cs
 /Grabble.Order.Api/Properties/launchSettings.json
+/Grabble.Order.Api/appsettings.Production.json
 /Grabble.Order.Api/appsettings.Development.json
 /Grabble.Order.Api/appsettings.json
+
