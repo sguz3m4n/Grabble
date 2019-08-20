@@ -5,14 +5,15 @@ using System.Collections.Generic;
 
 namespace Grabble.Services
 {
-    public class ItemService : IItemService
+    public class OrderService : IOrderService
     {
-
         private IRepository<Order> orderRespository;
+        private Guid orderguid;
 
-        public ItemService(IRepository<Order> orderrepository)
+        public OrderService(IRepository<Order> orderrepository)
         {
             this.orderRespository = orderrepository;
+            orderguid = Guid.NewGuid();
         }
 
         public void DeleteOrder(int id)
@@ -32,6 +33,7 @@ namespace Grabble.Services
 
         public void InsertOrder(Order order)
         {
+            order.OrderGuid = orderguid;
             orderRespository.Insert(order);
         }
 

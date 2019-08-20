@@ -34,14 +34,11 @@ namespace Grabble.Data.Domain.Grabbler
         /// <summary>
         /// Gets or sets the firstname
         /// </summary>
-        [JsonRequired]
         public string Firstname { get; set; }
-
 
         /// <summary>
         /// Gets or sets the firstname
         /// </summary>
-        [JsonRequired]
         public string Lastname { get; set; }
 
         /// <summary>
@@ -65,10 +62,9 @@ namespace Grabble.Data.Domain.Grabbler
         public string EmailToRevalidate { get; set; }
 
         /// <summary>
-        /// Gets or sets the phone number
+        /// Gets or sets the flight id
         /// </summary>
-        [JsonRequired]
-        public string FlightId { get; set; }
+        public int FlightId { get; set; }
 
 
         #endregion

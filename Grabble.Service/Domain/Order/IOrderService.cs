@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Grabble.Services
 {
-    public interface IItemService
+    public interface IOrderService
     {
         IEnumerable<Order> GetOrders();
         Order GetOrder(int id);

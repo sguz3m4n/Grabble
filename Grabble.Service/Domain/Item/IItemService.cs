@@ -10,6 +10,5 @@ namespace Grabble.Services.Domain
         void InsertItem(Item item);
         void UpdateItem(Item item);
         void DeleteItem(int id);
-
     }
 }

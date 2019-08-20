@@ -1,5 +1,5 @@
 {
-  "OrderGuid": "1782461c-b2e0-49cc-a091-a9c7060a9a6c",
+  "OrderStagingId": "1782461c-b2e0-49cc-a091-a9c7060a9a6c",
   "StoreId": 0,
   "ConsumerId": 1,
   "BillingAddressId": 2,

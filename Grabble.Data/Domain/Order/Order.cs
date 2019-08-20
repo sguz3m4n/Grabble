@@ -27,8 +27,13 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the order identifier
         /// </summary>
-        [JsonRequired]
         public Guid OrderGuid { get; set; }
+
+        /// <summary>
+        /// Gets or sets the external/client reference identifier
+        /// </summary>
+        [JsonRequired]
+        public string OrderStagingId { get; set; }
 
         /// <summary>
         /// Gets or sets the store identifier

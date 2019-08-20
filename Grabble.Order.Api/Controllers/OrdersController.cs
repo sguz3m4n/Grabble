@@ -9,10 +9,10 @@ namespace GrabbleOrder.Api.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly IItemService orderservice;
+        private readonly IOrderService orderservice;
         //private readonly OrderService orderservice;
 
-        public OrdersController(IItemService orderservice)
+        public OrdersController(IOrderService orderservice)
         {
             this.orderservice = orderservice;
         }

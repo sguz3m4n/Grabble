@@ -14,7 +14,7 @@ Step4 - Execute command
 # dotnet method
 # Add a new migration to the project
 Step1 - Execute Command
-  --> dotnet ef migrations add <migrationname> --context <contextname> -- project GrabbleRepository
+  --> dotnet ef migrations add initial --context ApplicationContext --project Grabble.Order.Api
 #Finally run all migrations associated with context
 Step2 -  Execute command
-  --> dotnet ef database update --context ApplicationContext --project GrabbleRepository 
+  --> dotnet ef database update --project Grabble.Order.Api
