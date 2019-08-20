@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Grabble.Repository\Grabble.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\Notification\" />
+  </ItemGroup>
+
 </Project>
