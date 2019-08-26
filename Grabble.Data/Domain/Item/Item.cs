@@ -37,7 +37,7 @@ namespace Grabble.Data.Domain
         /// <summary>
         /// Gets or sets the item name identifier
         /// </summary>
-        public string itemName { get; set; }
+        public string ItemName { get; set; }
 
         /// <summary>
         /// Gets or sets the product Barcode number

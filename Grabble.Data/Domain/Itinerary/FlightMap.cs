@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Grabble.Data.Domain.Itinerary
+namespace Grabble.Data.Domain
 {
-  public  class FlightMap
+    public  class FlightMap
     {
         public FlightMap(EntityTypeBuilder<Flight> entitybuilder)
         {

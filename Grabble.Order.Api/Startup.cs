@@ -42,7 +42,7 @@ namespace Order.Api
                 }
                 else {
                     Console.WriteLine("Development Mode");                 
-                    services.AddDbContext<ApplicationContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+                    services.AddDbContext<ApplicationContext>(options => options.UseMySql(Configuration.GetConnectionString("connDevelopment")));
                 }
 
                 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

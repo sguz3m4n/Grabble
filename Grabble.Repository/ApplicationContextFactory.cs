@@ -18,7 +18,7 @@ namespace Grabble.Repository
             .AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true)
             .Build();
 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString("connDevelopment");
 
             optionsBuilder.UseMySql(connectionString, b => b.MigrationsAssembly("Grabble.Order.Api"));
             

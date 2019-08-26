@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Inventory
+namespace Grabble.Data.Domain
 {
 
     [Table("Stock")]

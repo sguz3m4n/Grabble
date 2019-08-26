@@ -22,7 +22,7 @@ namespace Grabble.Repository.Domain.Item
             base.OnModelCreating(builder);
             //create order map method in Grabble.Data project
             //mapping examples in file
-            new ItemMap(builder.Entity<Grabble.Data.Domain.Item>());
+            //new FamiliarMap(builder.Entity<Grabble.Data.Domain.Item>());
         }
 
         #endregion

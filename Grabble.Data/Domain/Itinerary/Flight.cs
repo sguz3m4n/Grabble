@@ -2,10 +2,10 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Itinerary
+namespace Grabble.Data.Domain
 {
-    [Table("Order")]
-    [JsonObject("Order")]
+    [Table("Flight")]
+    [JsonObject("Flight")]
     public class Flight : BaseEntity
     {
         /// <summary>

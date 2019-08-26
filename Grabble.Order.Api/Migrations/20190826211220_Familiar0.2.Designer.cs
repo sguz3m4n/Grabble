@@ -3,14 +3,16 @@ using System;
 using Grabble.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Grabble.Order.Api.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190826211220_Familiar0.2")]
+    partial class Familiar02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,64 +104,6 @@ namespace Grabble.Order.Api.Migrations
                     b.ToTable("Consumer");
                 });
 
-            modelBuilder.Entity("Grabble.Data.Domain.Container", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<decimal>("Depth");
-
-                    b.Property<decimal>("Height");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.Property<Guid>("OrderGuid");
-
-                    b.Property<string>("Size");
-
-                    b.Property<string>("Type");
-
-                    b.Property<decimal>("Volume");
-
-                    b.Property<decimal>("Width");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Container");
-                });
-
-            modelBuilder.Entity("Grabble.Data.Domain.Content", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<Guid>("ItemId");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.Property<Guid>("OrderGuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Content");
-                });
-
             modelBuilder.Entity("Grabble.Data.Domain.Familiar", b =>
                 {
                     b.Property<long>("Id")
@@ -197,36 +141,6 @@ namespace Grabble.Order.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Familiar");
-                });
-
-            modelBuilder.Entity("Grabble.Data.Domain.Flight", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Airline")
-                        .IsRequired();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<DateTime>("DepartureDate");
-
-                    b.Property<TimeSpan>("DepartureTime");
-
-                    b.Property<string>("Destination")
-                        .IsRequired();
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Flight");
                 });
 
             modelBuilder.Entity("Grabble.Data.Domain.Item", b =>
@@ -331,6 +245,36 @@ namespace Grabble.Order.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Item");
+                });
+
+            modelBuilder.Entity("Grabble.Data.Domain.Itinerary.Flight", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Airline")
+                        .IsRequired();
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<DateTime>("DepartureDate");
+
+                    b.Property<TimeSpan>("DepartureTime");
+
+                    b.Property<string>("Destination")
+                        .IsRequired();
+
+                    b.Property<string>("IPAddress");
+
+                    b.Property<string>("ModifyBy");
+
+                    b.Property<DateTime>("ModifyDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Flight");
                 });
 
             modelBuilder.Entity("Grabble.Data.Domain.Order", b =>

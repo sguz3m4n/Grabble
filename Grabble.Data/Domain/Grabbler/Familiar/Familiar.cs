@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Grabble.Data.Domain.Grabbler
+namespace Grabble.Data.Domain
 {
     [Table("Familiar")]
     [JsonObject("Familiar")]
