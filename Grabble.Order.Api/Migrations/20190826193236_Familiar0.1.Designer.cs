@@ -3,14 +3,16 @@ using System;
 using Grabble.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Grabble.Order.Api.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190826193236_Familiar0.1")]
+    partial class Familiar01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,64 +104,6 @@ namespace Grabble.Order.Api.Migrations
                     b.ToTable("Consumer");
                 });
 
-            modelBuilder.Entity("Grabble.Data.Domain.Container", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<decimal>("Depth");
-
-                    b.Property<decimal>("Height");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.Property<Guid>("OrderGuid");
-
-                    b.Property<string>("Size");
-
-                    b.Property<string>("Type");
-
-                    b.Property<decimal>("Volume");
-
-                    b.Property<decimal>("Width");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Container");
-                });
-
-            modelBuilder.Entity("Grabble.Data.Domain.Content", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<Guid>("ItemId");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.Property<Guid>("OrderGuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Content");
-                });
-
             modelBuilder.Entity("Grabble.Data.Domain.Familiar", b =>
                 {
                     b.Property<long>("Id")
@@ -199,7 +143,7 @@ namespace Grabble.Order.Api.Migrations
                     b.ToTable("Familiar");
                 });
 
-            modelBuilder.Entity("Grabble.Data.Domain.Flight", b =>
+            modelBuilder.Entity("Grabble.Data.Domain.Itinerary.Flight", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -227,110 +171,6 @@ namespace Grabble.Order.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Flight");
-                });
-
-            modelBuilder.Entity("Grabble.Data.Domain.Item", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("AttributeDescription");
-
-                    b.Property<string>("AttributesXml");
-
-                    b.Property<string>("BarcodeNumber")
-                        .IsRequired();
-
-                    b.Property<decimal>("Calcium");
-
-                    b.Property<decimal>("Calories");
-
-                    b.Property<decimal>("Cholesterol");
-
-                    b.Property<string>("ContentCode");
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<decimal>("DietaryFiber");
-
-                    b.Property<decimal>("DiscountAmountExclTax");
-
-                    b.Property<decimal>("DiscountAmountInclTax");
-
-                    b.Property<int>("DownloadCount");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<decimal>("Iron");
-
-                    b.Property<bool>("IsDownloadActivated");
-
-                    b.Property<Guid>("ItemGuid");
-
-                    b.Property<decimal>("ItemHeight");
-
-                    b.Property<string>("ItemName");
-
-                    b.Property<decimal>("ItemVolume");
-
-                    b.Property<decimal?>("ItemWeight")
-                        .IsRequired();
-
-                    b.Property<decimal>("ItemWidht");
-
-                    b.Property<int?>("LicenseDownloadId");
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.Property<int>("OrderId");
-
-                    b.Property<decimal>("OriginalProductCost");
-
-                    b.Property<decimal>("Potassium");
-
-                    b.Property<decimal>("PriceExclTax");
-
-                    b.Property<decimal>("PriceInclTax");
-
-                    b.Property<int>("ProductId");
-
-                    b.Property<decimal>("Protein");
-
-                    b.Property<int>("Quantity");
-
-                    b.Property<decimal>("SaturatedFat");
-
-                    b.Property<decimal>("ServingSize");
-
-                    b.Property<decimal>("Sodium");
-
-                    b.Property<decimal>("Sugars");
-
-                    b.Property<decimal>("TotalCarbohydrate");
-
-                    b.Property<decimal>("TotalFat");
-
-                    b.Property<decimal>("TransFat");
-
-                    b.Property<decimal>("UnitPriceExclTax");
-
-                    b.Property<decimal>("UnitPriceInclTax");
-
-                    b.Property<decimal>("VitaminA");
-
-                    b.Property<decimal>("VitaminB");
-
-                    b.Property<decimal>("VitaminC");
-
-                    b.Property<decimal>("VitaminD");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Item");
                 });
 
             modelBuilder.Entity("Grabble.Data.Domain.Order", b =>
@@ -472,35 +312,6 @@ namespace Grabble.Order.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Order");
-                });
-
-            modelBuilder.Entity("Grabble.Data.Domain.Stock", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CreateBy");
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<int>("ExternalCount");
-
-                    b.Property<string>("IPAddress");
-
-                    b.Property<int>("ItemCount");
-
-                    b.Property<Guid>("ItemGuid");
-
-                    b.Property<string>("ItemName")
-                        .IsRequired();
-
-                    b.Property<string>("ModifyBy");
-
-                    b.Property<DateTime>("ModifyDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Stock");
                 });
 #pragma warning restore 612, 618
         }

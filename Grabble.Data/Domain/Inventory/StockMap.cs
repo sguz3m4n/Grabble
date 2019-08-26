@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grabble.Data.Domain.Inventory
+namespace Grabble.Data.Domain
 {
     public  class StockMap
     {

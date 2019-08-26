@@ -13,7 +13,7 @@ namespace Grabble.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           // optionsBuilder.UseMySql();
+            // optionsBuilder.UseMySql();
         }
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
@@ -21,9 +21,23 @@ namespace Grabble.Repository
             base.OnModelCreating(modelbuilder);
             //create order map method in Grabble.Data project
             //mapping examples in file
-            new OrderMap(modelbuilder.Entity<Order>());
-            new ItemMap(modelbuilder.Entity<Item>());
             new ConsumerMap(modelbuilder.Entity<Consumer>());
+            //consumers place orders
+            new OrderMap(modelbuilder.Entity<Order>());
+            //chooses familiar grabbler
+            new FamiliarMap(modelbuilder.Entity<Familiar>());
+            //grabbler enters flight itinerary
+            new FlightMap(modelbuilder.Entity<Flight>());
+
+            //manufacturer enters item info into Grabble
+            new ItemMap(modelbuilder.Entity<Item>());
+            //manufacturer enters stock info into Grabble
+            new StockMap(modelbuilder.Entity<Stock>());
+
+            //assemble order contents
+            new ContentMap(modelbuilder.Entity<Content>());
+            //place contents into Grabble container
+            new ContainerMap(modelbuilder.Entity<Container>());
         }
     }
 }
