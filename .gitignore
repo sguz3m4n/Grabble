@@ -295,3 +295,12 @@ GrabbleOrderAPI/appsettings.Staging.json
 
 /Grabble.Order.Api/appsettings.Production.Development.json
 /Grabble.Order.Api/appsettings.Staging.json
+/Grabble.Grabbler.Mvc/appsettings.Staging.json
+/Grabble.Grabbler.Mvc/appsettings.Production.json
+/Grabble.Grabbler.Mvc/appsettings.Production.Development.json
+/Grabble.Grabbler.Mvc/appsettings.json
+/Grabble.Grabbler.Mvc/appsettings.Development.json
+/Grabble.Repository/appsettings.Staging.json
+/Grabble.Repository/appsettings.Production.json
+/Grabble.Repository/appsettings.json
+/Grabble.Repository/appsettings.Development.json

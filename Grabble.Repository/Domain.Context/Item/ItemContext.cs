@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Grabble.Repository.Domain.Item
+namespace Grabble.Repository.Domain
 {
     public  class ItemContext:DbContext
     {

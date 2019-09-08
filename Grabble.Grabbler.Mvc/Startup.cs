@@ -1,6 +1,4 @@
 ﻿using Grabble.Repository;
-using Grabble.Repository.Interface;
-using Grabble.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Order.Api
+namespace Grabble.Grabbler.Mvc
 {
     public class Startup
     {
@@ -32,25 +30,21 @@ namespace Order.Api
                 if (CurrentEnvironment.IsProduction())
                 {
                     Console.WriteLine("Production Mode");
-                    services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Grabble.Order.Api")));
+                    services.AddDbContext<FamiliarContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Grabble.Order.Api")));
                 }
                 else
                 if (CurrentEnvironment.IsStaging())
                 {
                     Console.WriteLine("Staging Mode");
-                    services.AddDbContext<ApplicationContext>(options => options.UseMySql(Configuration.GetConnectionString("connStageAlt")));
-                   
-                }
-                else {
-                    Console.WriteLine("Development Mode");                 
-                    services.AddDbContext<ApplicationContext>(options => options.UseMySql(Configuration.GetConnectionString("connDevelopment")));
-                }
+                    services.AddDbContext<FamiliarContext>(options => options.UseMySql(Configuration.GetConnectionString("connStageAlt")));
 
-                services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-                services.AddTransient<IOrderService, OrderService>();
-
+                }
+                else
+                {
+                    Console.WriteLine("Development Mode");
+                    services.AddDbContext<FamiliarContext>(options => options.UseMySql(Configuration.GetConnectionString("connDevelopment")));
+                }
             }
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,12 +56,21 @@ namespace Order.Api
             }
             else
             {
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

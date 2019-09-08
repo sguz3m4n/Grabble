@@ -1,26 +1,29 @@
 ﻿using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace Grabble.Repository.Domain.Order
 {
   public class OrderContextFactory : IDesignTimeDbContextFactory<OrderContext>
   {
-    //migration commands will target this method to create database
-    //
+   
     public OrderContext CreateDbContext(string[] args)
     {
-      var optionsBuilder = new DbContextOptionsBuilder<OrderContext>();
-      //use the resource connection string to switch database targets
-      // #if DEBUG
-      //       optionsBuilder.UseMySql(Resources.mysqlDev);
-      // #else
-      //       optionsBuilder.UseSqlServer(Resources.connStage);
-      // #endif
+            var optionsBuilder = new DbContextOptionsBuilder<OrderContext>();
 
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true)
+            .Build();
 
-      return new OrderContext(optionsBuilder.Options);
-    }
+            var connectionString = configuration.GetConnectionString("connDevelopment");
+
+            optionsBuilder.UseMySql(connectionString, b => b.MigrationsAssembly("Grabble.Order.Api"));
+
+            return new OrderContext(optionsBuilder.Options);
+        }
   }
 }

@@ -1,0 +1,93 @@
+﻿@model Grabble.Data.Domain.Familiar
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Familiar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="FamiliarGuid" class="control-label"></label>
+            <input asp-for="FamiliarGuid" class="form-control" />
+            <span asp-validation-for="FamiliarGuid" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Username" class="control-label"></label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailToRevalidate" class="control-label"></label>
+                <input asp-for="EmailToRevalidate" class="form-control" />
+                <span asp-validation-for="EmailToRevalidate" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="FlightId" class="control-label"></label>
+            <input asp-for="FlightId" class="form-control" />
+            <span asp-validation-for="FlightId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreateDate" class="control-label"></label>
+            <input asp-for="CreateDate" class="form-control" />
+            <span asp-validation-for="CreateDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CreateBy" class="control-label"></label>
+            <input asp-for="CreateBy" class="form-control" />
+            <span asp-validation-for="CreateBy" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifyDate" class="control-label"></label>
+            <input asp-for="ModifyDate" class="form-control" />
+            <span asp-validation-for="ModifyDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifyBy" class="control-label"></label>
+            <input asp-for="ModifyBy" class="form-control" />
+            <span asp-validation-for="ModifyBy" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IPAddress" class="control-label"></label>
+            <input asp-for="IPAddress" class="form-control" />
+            <span asp-validation-for="IPAddress" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
