@@ -30,7 +30,7 @@ namespace Grabble.Grabbler.Mvc
                 if (CurrentEnvironment.IsProduction())
                 {
                     Console.WriteLine("Production Mode");
-                    services.AddDbContext<FamiliarContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Grabble.Order.Api")));
+                    services.AddDbContext<FamiliarContext>(options => options.UseMySql(Configuration.GetConnectionString("connProduction")));
                 }
                 else
                 if (CurrentEnvironment.IsStaging())
