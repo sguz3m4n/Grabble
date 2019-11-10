@@ -88,7 +88,7 @@ namespace Grabble.Repository.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NSDTgrab1!.
+        ///   Looks up a localized string similar to UpdatedPassword1!.
         /// </summary>
         internal static string connPassword {
             get {

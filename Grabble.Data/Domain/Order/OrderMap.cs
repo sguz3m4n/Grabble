@@ -14,7 +14,7 @@ namespace Grabble.Data.Domain
             entitybuilder.HasKey(t => t.Id);
             entitybuilder.Property(x => x.OrderGuid).IsRequired();
             entitybuilder.Property(x => x.StoreId).IsRequired();
-            entitybuilder.Property(x => x.CustomerId).IsRequired();
+            entitybuilder.Property(x => x.ConsumerId).IsRequired();
             entitybuilder.Property(x => x.BillingAddressId).IsRequired();
             entitybuilder.Property(x => x.ShippingAddressId).IsRequired();
             entitybuilder.Property(x => x.PickupAddressId).IsRequired();

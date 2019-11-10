@@ -1,35 +1,29 @@
 ﻿
-using Grabble.Repository.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using MySql.Data.MySqlClient;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.FileExtensions;
+using Microsoft.Extensions.Configuration.Json;
+using System.IO;
 namespace Grabble.Repository
 {
-    public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
+  public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
+  {
+    public ApplicationContext CreateDbContext(string[] args)
     {
-        public ApplicationContext CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
-            var connstring = new MySqlConnectionStringBuilder
-            {
-                Server = Resources.connServer,
-                UserID = Resources.connUserId,
-                Password = Resources.connPassword,
-                Database = Resources.connDatabase
-            };
-            var connection = new MySqlConnection(connstring.ToString());
+      var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+      
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true)
+            .Build();
 
-            //use the resource connection string to point to target database 
-            //optionsBuilder.UseSqlServer(Resources.connLocalProjectsV13);
-#if DEBUG
-            optionsBuilder.UseSqlServer(Resources.connLocalMSSQLLocalDB);        
-#else
-            optionsBuilder.UseMySql(connection);
+            var connectionString = configuration.GetConnectionString("connDevelopment");
 
-#endif
+            optionsBuilder.UseMySql(connectionString, b => b.MigrationsAssembly("Grabble.Order.Api"));
+            
             return new ApplicationContext(optionsBuilder.Options);
-        }
     }
+  }
 }
 
